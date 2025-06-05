@@ -29,13 +29,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden -mt-20 pt-20">
+      {/* Background Image - Chicago Skyline */}
+      <div className="absolute inset-0 z-0 -top-20">
         <img 
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
-          alt="Background"
-          className="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          alt="Chicago Skyline"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-800/40 to-slate-900/60"></div>
       </div>
