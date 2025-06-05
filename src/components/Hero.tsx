@@ -29,37 +29,27 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden -mt-20 pt-20">
-      {/* Background Image - Chicago Skyline */}
-      <div className="absolute inset-0 z-0 -top-20">
-        <img 
-          src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Chicago Skyline"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-800/40 to-slate-900/60"></div>
-      </div>
-
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-maroon-50/30 to-slate-100">
       {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 z-5">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-maroon-200/30 to-transparent rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-steel-blue-200/30 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-br from-maroon-300/20 to-transparent rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-maroon-200/40 to-transparent rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-steel-blue-200/40 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-br from-maroon-300/30 to-transparent rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
           <div className="mb-8">
-            <p className="text-lg sm:text-xl text-white/90 font-medium mb-6 tracking-wide">Hello there! Welcome to my world</p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 font-poppins leading-tight">
-              I'm <span className="bg-gradient-to-r from-maroon-400 to-maroon-300 bg-clip-text text-transparent">Juhi Anand</span>
+            <p className="text-lg sm:text-xl text-slate-600 font-medium mb-6 tracking-wide">Hello there! Welcome to my world</p>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 font-poppins leading-tight">
+              I'm <span className="bg-gradient-to-r from-maroon-700 to-maroon-600 bg-clip-text text-transparent">Juhi Anand</span>
             </h1>
           </div>
           
           <div className="mb-12">
-            <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 font-medium font-poppins min-h-[100px] leading-relaxed">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-700 font-medium font-poppins min-h-[100px] leading-relaxed">
               {animatedText}
-              <span className="animate-pulse text-maroon-400">|</span>
+              <span className="animate-pulse text-maroon-500">|</span>
             </p>
           </div>
           
@@ -76,9 +66,9 @@ const Hero = () => {
           <div className="animate-bounce">
             <button 
               onClick={() => scrollToSection('about')}
-              className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-maroon-400 hover:bg-maroon-400/20 transition-all duration-300"
+              className="w-12 h-12 rounded-full border-2 border-slate-300 flex items-center justify-center hover:border-maroon-500 hover:bg-maroon-50 transition-all duration-300"
             >
-              <ChevronDown className="h-5 w-5 text-white/80" />
+              <ChevronDown className="h-5 w-5 text-slate-600" />
             </button>
           </div>
         </div>
