@@ -39,31 +39,33 @@ const Hero = () => {
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          <div className="mb-8">
-            <p className="text-lg sm:text-xl text-slate-600 font-medium mb-6 tracking-wide">Hello there! Welcome to my world</p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 font-poppins leading-tight">
-              I'm <span className="bg-gradient-to-r from-maroon-700 to-maroon-600 bg-clip-text text-transparent">Juhi Anand</span>
-            </h1>
-          </div>
-          
-          <div className="mb-12">
-            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-700 font-medium font-poppins min-h-[100px] leading-relaxed">
-              {animatedText}
-              <span className="animate-pulse text-maroon-500">|</span>
-            </p>
-          </div>
-          
-          <div className="flex justify-center items-center mb-16">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-maroon-700 to-maroon-600 hover:from-maroon-800 hover:to-maroon-700 text-white px-10 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl rounded-full border-0"
-            >
-              <Download className="mr-3 h-5 w-5" />
-              Resume
-            </Button>
+          <div className="bg-maroon-50/20 backdrop-blur-sm rounded-3xl p-8 sm:p-12 lg:p-16 border border-maroon-100/30 shadow-lg">
+            <div className="mb-8">
+              <p className="text-lg sm:text-xl text-slate-600 font-medium mb-6 tracking-wide">Hello there! Welcome to my world</p>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 font-poppins leading-tight">
+                I'm <span className="bg-gradient-to-r from-maroon-700 to-maroon-600 bg-clip-text text-transparent">Juhi Anand</span>
+              </h1>
+            </div>
+            
+            <div className="mb-12">
+              <p className="text-xl sm:text-2xl lg:text-3xl text-slate-700 font-medium font-poppins min-h-[100px] leading-relaxed">
+                {animatedText}
+                <span className="animate-pulse text-maroon-500">|</span>
+              </p>
+            </div>
+            
+            <div className="flex justify-center items-center mb-16">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-maroon-700 to-maroon-600 hover:from-maroon-800 hover:to-maroon-700 text-white px-10 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl rounded-full border-0"
+              >
+                <Download className="mr-3 h-5 w-5" />
+                Resume
+              </Button>
+            </div>
           </div>
 
-          <div className="animate-bounce">
+          <div className="animate-bounce mt-8">
             <button 
               onClick={() => scrollToSection('about')}
               className="w-12 h-12 rounded-full border-2 border-slate-300 flex items-center justify-center hover:border-maroon-500 hover:bg-maroon-50 transition-all duration-300"
