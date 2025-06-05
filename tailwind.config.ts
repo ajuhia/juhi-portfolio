@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -29,7 +28,7 @@ export default {
 				background: '#f8fafc',
 				foreground: '#0f172a',
 				primary: {
-					DEFAULT: '#800020',
+					DEFAULT: '#500000',
 					foreground: '#ffffff'
 				},
 				secondary: {
@@ -46,7 +45,7 @@ export default {
 					600: '#dc2626',
 					700: '#b91c1c',
 					800: '#991b1b',
-					900: '#800020'
+					900: '#500000'
 				},
 				'steel-blue': {
 					50: '#f0f9ff',
