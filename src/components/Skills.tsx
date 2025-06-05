@@ -45,6 +45,10 @@ const Skills = () => {
     }
   ];
 
+  // Split skills into two columns
+  const leftColumn = skillCategories.slice(0, 3);
+  const rightColumn = skillCategories.slice(3);
+
   return (
     <section id="skills" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,31 +57,62 @@ const Skills = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-maroon-500 to-steel-blue-500 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((skillGroup, index) => (
-            <div 
-              key={skillGroup.category}
-              className={`${skillGroup.bgColor} p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border ${skillGroup.borderColor}`}
-            >
-              <div className="flex items-center mb-4">
-                <span className="text-3xl mr-3">{skillGroup.icon}</span>
-                <h3 className={`text-lg font-bold ${skillGroup.textColor} font-poppins`}>
-                  {skillGroup.category}
-                </h3>
+        <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
+          {/* Left Column */}
+          <div className="flex-1 space-y-6">
+            {leftColumn.map((skillGroup, index) => (
+              <div 
+                key={skillGroup.category}
+                className={`${skillGroup.bgColor} p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border ${skillGroup.borderColor}`}
+              >
+                <div className="flex items-center mb-4">
+                  <span className="text-3xl mr-3">{skillGroup.icon}</span>
+                  <h3 className={`text-lg font-bold ${skillGroup.textColor} font-poppins`}>
+                    {skillGroup.category}
+                  </h3>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.items.map((skill, skillIndex) => (
+                    <span 
+                      key={skillIndex}
+                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm font-medium border border-gray-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-              
-              <div className="flex flex-wrap gap-2">
-                {skillGroup.items.map((skill, skillIndex) => (
-                  <span 
-                    key={skillIndex}
-                    className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm font-medium border border-gray-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
+            ))}
+          </div>
+
+          {/* Right Column */}
+          <div className="flex-1 space-y-6">
+            {rightColumn.map((skillGroup, index) => (
+              <div 
+                key={skillGroup.category}
+                className={`${skillGroup.bgColor} p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border ${skillGroup.borderColor}`}
+              >
+                <div className="flex items-center mb-4">
+                  <span className="text-3xl mr-3">{skillGroup.icon}</span>
+                  <h3 className={`text-lg font-bold ${skillGroup.textColor} font-poppins`}>
+                    {skillGroup.category}
+                  </h3>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.items.map((skill, skillIndex) => (
+                    <span 
+                      key={skillIndex}
+                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm font-medium border border-gray-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
