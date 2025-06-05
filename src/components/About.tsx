@@ -38,7 +38,18 @@ const About = () => {
           <div className="w-24 h-1 bg-maroon mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          {/* Profile Photo */}
+          <div className="animate-fade-in">
+            <div className="bg-gray-200 rounded-2xl shadow-lg overflow-hidden h-80 flex items-center justify-center">
+              <img 
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face" 
+                alt="Juhi Anand" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
           {/* About Text */}
           <div className="animate-fade-in">
             <div className="bg-gray-50 p-8 rounded-2xl shadow-lg">
