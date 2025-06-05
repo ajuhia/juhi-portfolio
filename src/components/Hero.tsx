@@ -39,7 +39,7 @@ const Hero = () => {
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          <div className="bg-steel-blue-50/20 backdrop-blur-sm rounded-3xl p-8 sm:p-12 lg:p-16 border border-steel-blue-100/30 shadow-lg">
+          <div className="bg-maroon-50/20 backdrop-blur-sm rounded-3xl p-8 sm:p-12 lg:p-16 border border-maroon-100/30 shadow-lg">
             <div className="mb-8">
               <p className="text-lg sm:text-xl text-slate-600 font-medium mb-6 tracking-wide">Hello there! Welcome to my world</p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 font-poppins leading-tight">
