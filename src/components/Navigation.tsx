@@ -1,19 +1,20 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Home } from 'lucide-react';
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home', isIcon: true },
+    { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Me' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'education', label: 'Education' },
     { id: 'experience', label: 'Experience' },
     { id: 'certifications', label: 'Certifications' },
+    { id: 'community', label: 'Community' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -54,7 +55,7 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-maroon-700 font-poppins">
+          <div className="text-2xl font-bold text-maroon-900 font-poppins">
             Juhi Anand
           </div>
           
@@ -63,11 +64,11 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
+                className={`text-sm font-medium transition-colors duration-300 hover:text-maroon-600 ${
                   activeSection === item.id ? 'text-maroon-600' : 'text-slate-700'
                 }`}
               >
-                {item.isIcon ? <Home size={18} /> : item.label}
+                {item.label}
               </button>
             ))}
           </div>
