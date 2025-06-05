@@ -32,7 +32,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50">
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          <div className="bg-gradient-to-br from-white/40 via-white/60 to-white/40 backdrop-blur-lg rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/30 shadow-2xl shadow-maroon-200/20 relative overflow-hidden">
+          <div className="bg-maroon-700/30 backdrop-blur-lg rounded-3xl p-8 sm:p-12 lg:p-16 border border-white/30 shadow-2xl shadow-maroon-200/20 relative overflow-hidden">
             {/* Background gradients moved inside the text box */}
             <div className="absolute inset-0">
               {/* Primary gradient mesh */}
