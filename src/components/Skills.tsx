@@ -36,21 +36,21 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-20 lg:py-24 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-block">
-            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Skills & Expertise</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 via-maroon-500 to-steel-blue-500 mx-auto rounded-full"></div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 font-poppins">Skills & Expertise</h2>
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-maroon-700 via-maroon-500 to-steel-blue-500 mx-auto rounded-full"></div>
           </div>
         </div>
 
-        {/* Single row with 5 columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 xl:gap-8">
+        {/* Responsive grid - stack on mobile, 2 cols on tablet, 5 cols on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
           {skillCategories.map((skillGroup, index) => (
             <div 
               key={skillGroup.category}
-              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden"
+              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-4 sm:p-6 border border-white/30 group relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background gradients moved inside each card */}
@@ -65,8 +65,8 @@ const Skills = () => {
                     ? 'from-transparent via-maroon-50/30 to-transparent' 
                     : 'from-transparent via-steel-blue-50/30 to-transparent'
                 } rounded-2xl`}></div>
-                <div className="absolute top-2 left-2 w-16 h-16 bg-gradient-to-br from-maroon-200/40 via-maroon-300/20 to-transparent rounded-full blur-xl animate-float opacity-60"></div>
-                <div className="absolute bottom-2 right-2 w-20 h-20 bg-gradient-to-br from-steel-blue-200/40 via-steel-blue-300/20 to-transparent rounded-full blur-xl animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-2 left-2 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-maroon-200/40 via-maroon-300/20 to-transparent rounded-full blur-xl animate-float opacity-60"></div>
+                <div className="absolute bottom-2 right-2 w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-steel-blue-200/40 via-steel-blue-300/20 to-transparent rounded-full blur-xl animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
               </div>
 
               {/* Gradient overlay on hover */}
@@ -76,25 +76,25 @@ const Skills = () => {
                   : 'bg-gradient-to-br from-steel-blue-500 to-steel-blue-700'
               }`}></div>
               
-              <div className="text-center mb-6 relative z-10">
-                <span className="text-4xl block mb-4 group-hover:scale-110 transition-transform duration-300">{skillGroup.icon}</span>
-                <h3 className={`text-xl font-bold font-poppins ${
+              <div className="text-center mb-4 sm:mb-6 relative z-10">
+                <span className="text-3xl sm:text-4xl block mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">{skillGroup.icon}</span>
+                <h3 className={`text-lg sm:text-xl font-bold font-poppins ${
                   skillGroup.color === 'maroon' ? 'text-maroon-700' : 'text-steel-blue-600'
                 } group-hover:text-opacity-90 transition-colors duration-300`}>
                   {skillGroup.category}
                 </h3>
-                <div className={`w-12 h-1 mx-auto mt-3 rounded-full transition-all duration-300 group-hover:w-16 ${
+                <div className={`w-10 sm:w-12 h-1 mx-auto mt-2 sm:mt-3 rounded-full transition-all duration-300 group-hover:w-14 sm:group-hover:w-16 ${
                   skillGroup.color === 'maroon' 
                     ? 'bg-gradient-to-r from-maroon-700 via-maroon-500 to-maroon-300' 
                     : 'bg-gradient-to-r from-steel-blue-600 via-steel-blue-400 to-steel-blue-300'
                 }`}></div>
               </div>
               
-              <div className="flex flex-wrap gap-2 justify-center relative z-10">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center relative z-10">
                 {skillGroup.items.map((skill, skillIndex) => (
                   <span 
                     key={skillIndex}
-                    className={`px-3 py-1.5 rounded-full text-white font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-xs ${
+                    className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-white font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-xs ${
                       skillGroup.color === 'maroon' 
                         ? 'bg-gradient-to-r from-maroon-700 via-maroon-600 to-maroon-500 hover:from-maroon-800 hover:via-maroon-700 hover:to-maroon-600' 
                         : 'bg-gradient-to-r from-steel-blue-600 via-steel-blue-500 to-steel-blue-400 hover:from-steel-blue-700 hover:via-steel-blue-600 hover:to-steel-blue-500'
