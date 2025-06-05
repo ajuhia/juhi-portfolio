@@ -1,23 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Download, Mail, Linkedin, ChevronDown } from 'lucide-react';
+import { Download, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const [animatedText, setAnimatedText] = useState('');
   const fullText = 'Business Analytics Graduate | Data × AI Enthusiast | Data Engineer | Backend Developer';
-  const words = fullText.split(' ');
 
   useEffect(() => {
-    let wordIndex = 0;
+    let currentIndex = 0;
     const interval = setInterval(() => {
-      if (wordIndex < words.length) {
-        setAnimatedText(words.slice(0, wordIndex + 1).join(' '));
-        wordIndex++;
+      if (currentIndex <= fullText.length) {
+        setAnimatedText(fullText.slice(0, currentIndex));
+        currentIndex++;
       } else {
         clearInterval(interval);
       }
-    }, 300);
+    }, 50);
 
     return () => clearInterval(interval);
   }, []);
@@ -43,7 +42,7 @@ const Hero = () => {
           <div className="mb-8">
             <p className="text-lg sm:text-xl text-slate-600 font-medium mb-6 tracking-wide">Hello there! Welcome to my world</p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 font-poppins leading-tight">
-              I'm <span className="bg-gradient-to-r from-maroon-600 to-maroon-500 bg-clip-text text-transparent">Juhi Anand</span>
+              I'm <span className="bg-gradient-to-r from-maroon-700 to-maroon-600 bg-clip-text text-transparent">Juhi Anand</span>
             </h1>
           </div>
           
@@ -54,31 +53,14 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <div className="flex justify-center items-center mb-16">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-maroon-600 to-maroon-500 hover:from-maroon-700 hover:to-maroon-600 text-white px-10 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl rounded-full border-0"
+              className="bg-gradient-to-r from-maroon-700 to-maroon-600 hover:from-maroon-800 hover:to-maroon-700 text-white px-10 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl rounded-full border-0"
             >
               <Download className="mr-3 h-5 w-5" />
-              Download Resume
+              Resume
             </Button>
-            
-            <div className="flex gap-4">
-              <a 
-                href="mailto:ajuhi31@gmail.com"
-                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl border border-slate-200"
-              >
-                <Mail className="h-6 w-6 text-maroon-600" />
-              </a>
-              <a 
-                href="https://linkedin.com/in/juhianand"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-14 h-14 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl border border-slate-200"
-              >
-                <Linkedin className="h-6 w-6 text-steel-blue-600" />
-              </a>
-            </div>
           </div>
 
           <div className="animate-bounce">

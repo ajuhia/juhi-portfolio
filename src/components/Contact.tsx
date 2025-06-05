@@ -29,15 +29,15 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-gradient-to-b from-slate-50/50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_40%,rgba(128,0,32,0.15),transparent_70%)]"></div>
-        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_60%,rgba(70,130,180,0.15),transparent_70%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_40%,rgba(162,60,60,0.15),transparent_70%)]"></div>
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_60%,rgba(106,155,189,0.15),transparent_70%)]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-20 animate-fade-in">
           <div className="inline-block mb-8">
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Let's Connect & Collaborate</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-maroon-500 to-steel-blue-500 mx-auto rounded-full"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 mx-auto rounded-full"></div>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ const Contact = () => {
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 group">
                   <div className="w-14 h-14 bg-gradient-to-br from-maroon-100 to-maroon-200 rounded-xl flex items-center justify-center group-hover:from-maroon-200 group-hover:to-maroon-300 transition-all duration-300">
-                    <MapPin className="h-6 w-6 text-maroon-600" />
+                    <MapPin className="h-6 w-6 text-maroon-700" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Location</h4>
@@ -69,7 +69,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900">Email</h4>
-                      <p className="text-maroon-600 hover:text-maroon-500 transition-colors">
+                      <p className="text-maroon-700 hover:text-maroon-600 transition-colors">
                         ajuhi31@gmail.com
                       </p>
                     </div>
@@ -84,7 +84,7 @@ const Contact = () => {
                     className="flex items-center space-x-4"
                   >
                     <div className="w-14 h-14 bg-gradient-to-br from-maroon-100 to-maroon-200 rounded-xl flex items-center justify-center group-hover:from-maroon-200 group-hover:to-maroon-300 transition-all duration-300">
-                      <Linkedin className="h-6 w-6 text-maroon-600" />
+                      <Linkedin className="h-6 w-6 text-maroon-700" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900">LinkedIn</h4>
@@ -104,7 +104,7 @@ const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-slate-50/70"></div>
               <CardHeader className="relative z-10">
                 <CardTitle className="text-2xl font-bold text-slate-900 font-poppins flex items-center">
-                  <Send className="mr-3 h-6 w-6 text-maroon-600" />
+                  <Send className="mr-3 h-6 w-6 text-maroon-700" />
                   Send a Message
                 </CardTitle>
               </CardHeader>
@@ -119,7 +119,7 @@ const Contact = () => {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="border-slate-300 focus:border-maroon-500 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
+                        className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
                         required
                       />
                     </div>
@@ -132,7 +132,7 @@ const Contact = () => {
                         placeholder="your.email@example.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className="border-slate-300 focus:border-maroon-500 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
+                        className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
                         required
                       />
                     </div>
@@ -146,14 +146,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="border-slate-300 focus:border-maroon-500 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl resize-none"
+                      className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl resize-none"
                       required
                     />
                   </div>
                   
                   <Button 
                     type="submit"
-                    className="w-full bg-gradient-to-r from-maroon-600 to-maroon-500 hover:from-maroon-700 hover:to-maroon-600 text-white py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-xl"
+                    className="w-full bg-gradient-to-r from-maroon-700 to-maroon-600 hover:from-maroon-800 hover:to-maroon-700 text-white py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-xl"
                   >
                     <Send className="mr-3 h-5 w-5" />
                     Send Message

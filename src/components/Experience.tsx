@@ -27,11 +27,11 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-poppins">Experience</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-maroon-500 to-steel-blue-500 mx-auto"></div>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Experience</h2>
+          <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 mx-auto rounded-full"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
@@ -49,13 +49,13 @@ const Experience = () => {
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 font-poppins">{exp.title}</h3>
-                      <h4 className="text-lg font-semibold text-maroon-600">{exp.company}</h4>
+                      <h4 className="text-lg font-semibold text-maroon-700">{exp.company}</h4>
                     </div>
                     <div className="text-right">
                       <span className="text-sm font-medium text-gray-600">{exp.period}</span>
                       <div className={`text-xs font-medium px-2 py-1 rounded-full mt-1 ${
                         exp.type === 'Internship' 
-                          ? 'bg-maroon-600/10 text-maroon-600' 
+                          ? 'bg-maroon-700/10 text-maroon-700' 
                           : 'bg-steel-blue-600/10 text-steel-blue-600'
                       }`}>
                         {exp.type}
