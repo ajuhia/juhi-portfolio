@@ -22,15 +22,11 @@ const About = () => {
             <div className="relative flex justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-maroon-200/20 to-steel-blue-200/20 rounded-full blur-3xl transform"></div>
               <div className="relative w-80 h-80 mx-auto bg-gradient-to-br from-slate-100 to-slate-200 rounded-full shadow-2xl overflow-hidden border-4 border-white">
-                <div className="w-full h-full flex items-center justify-center text-slate-400 bg-gradient-to-br from-white to-slate-50">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-maroon-100 to-steel-blue-100 rounded-full flex items-center justify-center">
-                      <div className="text-6xl opacity-80">👤</div>
-                    </div>
-                    <p className="text-xl font-semibold text-slate-700">Juhi Anand</p>
-                    <p className="text-sm text-slate-500 mt-2">Data Engineer & Analytics Expert</p>
-                  </div>
-                </div>
+                <img 
+                  src="/lovable-uploads/ba038dc4-f455-4256-b475-f0116c619339.png" 
+                  alt="Juhi Anand"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
