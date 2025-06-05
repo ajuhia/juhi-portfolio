@@ -38,7 +38,7 @@ const About = () => {
           <div className="w-24 h-1 bg-maroon mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           {/* Profile Photo */}
           <div className="animate-fade-in">
             <div className="bg-gray-200 rounded-2xl shadow-lg overflow-hidden h-80 flex items-center justify-center">
@@ -61,33 +61,33 @@ const About = () => {
               </p>
             </div>
           </div>
+        </div>
 
-          {/* Skills Grid */}
-          <div className="animate-fade-in">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 font-poppins">Skills & Expertise</h3>
-            <div className="grid gap-6">
-              {skills.map((skillGroup, index) => (
-                <div 
-                  key={skillGroup.category}
-                  className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-steel-blue hover:shadow-xl transition-all duration-300 hover:scale-105"
-                >
-                  <div className="flex items-center mb-3">
-                    <span className="text-2xl mr-3">{skillGroup.icon}</span>
-                    <h4 className="text-lg font-semibold text-maroon font-poppins">{skillGroup.category}</h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {skillGroup.items.map((skill, skillIndex) => (
-                      <span 
-                        key={skillIndex}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+        {/* Skills Section - Horizontal Layout */}
+        <div className="animate-fade-in">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center font-poppins">Skills & Expertise</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {skills.map((skillGroup, index) => (
+              <div 
+                key={skillGroup.category}
+                className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-steel-blue/50 hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                <div className="flex items-center mb-3">
+                  <span className="text-2xl mr-3">{skillGroup.icon}</span>
+                  <h4 className="text-lg font-semibold text-maroon/70 font-poppins">{skillGroup.category}</h4>
                 </div>
-              ))}
-            </div>
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.items.map((skill, skillIndex) => (
+                    <span 
+                      key={skillIndex}
+                      className="px-3 py-1 bg-gray-50 text-gray-600 rounded-full text-sm font-medium"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
