@@ -57,18 +57,12 @@ const Hero = () => {
                 {/* Image Section */}
                 <div className="flex-shrink-0 order-1 lg:order-1">
                   <div className="relative group">
-                    {/* Image Placeholder */}
-                    <div className="w-48 h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gradient-to-br from-maroon-100 via-white to-steel-blue-100 rounded-2xl shadow-2xl border-4 border-white/50 overflow-hidden relative">
-                      {/* Image placeholder with subtle pattern */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-maroon-200/30 via-transparent to-steel-blue-200/30"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center p-4">
-                          <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-gradient-to-br from-maroon-400 to-steel-blue-400 rounded-full flex items-center justify-center">
-                            <span className="text-2xl sm:text-3xl text-white font-bold">JA</span>
-                          </div>
-                          <p className="text-slate-600 font-medium text-sm sm:text-base">Your Photo Here</p>
-                        </div>
-                      </div>
+                    <div className="w-48 h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl shadow-2xl border-4 border-white/50 overflow-hidden relative">
+                      <img 
+                        src="/lovable-uploads/ba038dc4-f455-4256-b475-f0116c619339.png" 
+                        alt="Juhi Anand"
+                        className="w-full h-full object-cover"
+                      />
                       {/* Hover effect */}
                       <div className="absolute inset-0 bg-gradient-to-t from-maroon-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>

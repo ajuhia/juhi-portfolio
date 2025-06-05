@@ -17,21 +17,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-fade-in order-2 lg:order-1">
-            <div className="relative flex justify-center">
-              <div className="absolute inset-0 bg-gradient-to-r from-maroon-200/20 to-steel-blue-200/20 rounded-full blur-3xl transform"></div>
-              <div className="relative w-80 h-80 mx-auto bg-gradient-to-br from-slate-100 to-slate-200 rounded-full shadow-2xl overflow-hidden border-4 border-white">
-                <img 
-                  src="/lovable-uploads/ba038dc4-f455-4256-b475-f0116c619339.png" 
-                  alt="Juhi Anand"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="animate-fade-in order-1 lg:order-2">
+        <div className="flex justify-center">
+          <div className="animate-fade-in max-w-4xl">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
               <p className="text-lg text-slate-700 leading-relaxed font-poppins">
                 Hey there! 👋 I'm <span className="font-semibold text-maroon-700">Juhi</span>, and I'm absolutely fascinated by the magic that happens when data meets creativity. You know that feeling when you discover a hidden pattern in seemingly random numbers? That's my daily dose of excitement!
