@@ -24,11 +24,18 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_25%_25%,rgba(162,60,60,0.1),transparent_50%)]"></div>
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_75%_75%,rgba(106,155,189,0.1),transparent_50%)]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Education</h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 mx-auto rounded-full"></div>
+          <div className="inline-block">
+            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Education</h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 mx-auto rounded-full"></div>
+          </div>
         </div>
 
         <div className="relative max-w-4xl mx-auto">

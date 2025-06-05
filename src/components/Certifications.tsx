@@ -25,11 +25,18 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-poppins">Certifications</h2>
-          <div className="w-24 h-1 bg-maroon mx-auto"></div>
+    <section id="certifications" className="py-24 bg-gray-50 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_25%_25%,rgba(162,60,60,0.1),transparent_50%)]"></div>
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_75%_75%,rgba(106,155,189,0.1),transparent_50%)]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-block">
+            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Certifications</h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 mx-auto rounded-full"></div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
@@ -40,12 +47,12 @@ const Certifications = () => {
             >
               <CardHeader className="text-center pb-4">
                 <div className="text-4xl mb-4">{cert.icon}</div>
-                <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-maroon transition-colors duration-300 font-poppins">
+                <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-maroon-700 transition-colors duration-300 font-poppins">
                   {cert.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-steel-blue font-medium mb-2">{cert.issuer}</p>
+                <p className="text-steel-blue-600 font-medium mb-2">{cert.issuer}</p>
                 <span className="text-gray-600">{cert.date}</span>
               </CardContent>
             </Card>
