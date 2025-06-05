@@ -3,7 +3,6 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Connect from '@/components/Connect';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Education from '@/components/Education';
@@ -18,7 +17,6 @@ const Index = () => {
       <Navigation />
       <Hero />
       <About />
-      <Connect />
       <Skills />
       <Projects />
       <Education />

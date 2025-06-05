@@ -26,18 +26,40 @@ export default {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: '#fafafa',
-				foreground: '#1f1f1f',
+				background: '#f8fafc',
+				foreground: '#0f172a',
 				primary: {
-					DEFAULT: '#a23c3c',
+					DEFAULT: '#059669',
 					foreground: '#ffffff'
 				},
 				secondary: {
-					DEFAULT: '#6a9bbd',
+					DEFAULT: '#475569',
 					foreground: '#ffffff'
 				},
-				maroon: '#a23c3c',
-				'steel-blue': '#6a9bbd',
+				emerald: {
+					50: '#ecfdf5',
+					100: '#d1fae5',
+					200: '#a7f3d0',
+					300: '#6ee7b7',
+					400: '#34d399',
+					500: '#10b981',
+					600: '#059669',
+					700: '#047857',
+					800: '#065f46',
+					900: '#064e3b'
+				},
+				slate: {
+					50: '#f8fafc',
+					100: '#f1f5f9',
+					200: '#e2e8f0',
+					300: '#cbd5e1',
+					400: '#94a3b8',
+					500: '#64748b',
+					600: '#475569',
+					700: '#334155',
+					800: '#1e293b',
+					900: '#0f172a'
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
@@ -118,6 +140,14 @@ export default {
 						opacity: '1',
 						transform: 'translateX(0)'
 					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
+					}
 				}
 			},
 			animation: {
@@ -125,7 +155,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'float': 'float 3s ease-in-out infinite',
-				'slide-in': 'slide-in 0.8s ease-out'
+				'slide-in': 'slide-in 0.8s ease-out',
+				'shimmer': 'shimmer 2s infinite linear'
 			}
 		}
 	},
