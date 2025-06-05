@@ -7,41 +7,41 @@ const Skills = () => {
       category: "Programming",
       items: ["Python", "R", "SQL", "Bash"],
       icon: "💻",
-      bgColor: "bg-maroon-50",
-      borderColor: "border-maroon-200",
-      textColor: "text-maroon-600"
+      bgColor: "bg-maroon-800",
+      borderColor: "border-maroon-600",
+      textColor: "text-maroon-100"
     },
     {
       category: "Cloud & DevOps",
       items: ["AWS (Kinesis, Glue, Lambda)", "Docker", "Jenkins"],
       icon: "☁️",
-      bgColor: "bg-steel-blue-50",
-      borderColor: "border-steel-blue-200",
-      textColor: "text-steel-blue-600"
+      bgColor: "bg-maroon-700",
+      borderColor: "border-maroon-500",
+      textColor: "text-maroon-100"
     },
     {
       category: "Databases",
       items: ["PostgreSQL", "TimescaleDB", "DynamoDB"],
       icon: "🗄️",
-      bgColor: "bg-maroon-50",
-      borderColor: "border-maroon-200",
-      textColor: "text-maroon-600"
+      bgColor: "bg-maroon-800",
+      borderColor: "border-maroon-600",
+      textColor: "text-maroon-100"
     },
     {
       category: "Analytics & AI",
       items: ["NLP", "Time-Series Forecasting", "ML Ops", "Regression Modeling"],
       icon: "🔍",
-      bgColor: "bg-steel-blue-50",
-      borderColor: "border-steel-blue-200",
-      textColor: "text-steel-blue-600"
+      bgColor: "bg-maroon-700",
+      borderColor: "border-maroon-500",
+      textColor: "text-maroon-100"
     },
     {
       category: "Tools",
       items: ["Tableau", "Grafana", "Apache Airflow", "Hive", "GitHub"],
       icon: "🛠️",
-      bgColor: "bg-maroon-50",
-      borderColor: "border-maroon-200",
-      textColor: "text-maroon-600"
+      bgColor: "bg-maroon-800",
+      borderColor: "border-maroon-600",
+      textColor: "text-maroon-100"
     }
   ];
 
@@ -50,11 +50,11 @@ const Skills = () => {
   const rightColumn = skillCategories.slice(3);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-maroon-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 font-poppins">Skills & Expertise</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-maroon-500 to-steel-blue-500 mx-auto"></div>
+          <h2 className="text-4xl font-bold text-white mb-4 font-poppins">Skills & Expertise</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-maroon-300 to-maroon-400 mx-auto"></div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
@@ -76,7 +76,7 @@ const Skills = () => {
                   {skillGroup.items.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm font-medium border border-gray-200"
+                      className="px-3 py-1 bg-maroon-200 text-maroon-900 rounded-full text-sm font-medium border border-maroon-300"
                     >
                       {skill}
                     </span>
@@ -104,7 +104,7 @@ const Skills = () => {
                   {skillGroup.items.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm font-medium border border-gray-200"
+                      className="px-3 py-1 bg-maroon-200 text-maroon-900 rounded-full text-sm font-medium border border-maroon-300"
                     >
                       {skill}
                     </span>
