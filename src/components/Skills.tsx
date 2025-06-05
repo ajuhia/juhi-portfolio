@@ -36,16 +36,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
-      {/* Enhanced background with mesh gradients */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-maroon-100/40 via-transparent to-steel-blue-100/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-maroon-50/30 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-bl from-steel-blue-50/40 via-transparent to-maroon-50/20"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_25%_25%,rgba(162,60,60,0.08),transparent_50%)]"></div>
-        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_75%_75%,rgba(106,155,189,0.08),transparent_50%)]"></div>
-      </div>
-
+    <section id="skills" className="py-24 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-block">
@@ -62,6 +53,22 @@ const Skills = () => {
               className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              {/* Background gradients moved inside each card */}
+              <div className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl">
+                <div className={`absolute inset-0 bg-gradient-to-br ${
+                  skillGroup.color === 'maroon' 
+                    ? 'from-maroon-100/60 via-transparent to-maroon-50/40' 
+                    : 'from-steel-blue-100/60 via-transparent to-steel-blue-50/40'
+                } rounded-2xl`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-tr ${
+                  skillGroup.color === 'maroon' 
+                    ? 'from-transparent via-maroon-50/30 to-transparent' 
+                    : 'from-transparent via-steel-blue-50/30 to-transparent'
+                } rounded-2xl`}></div>
+                <div className="absolute top-2 left-2 w-16 h-16 bg-gradient-to-br from-maroon-200/40 via-maroon-300/20 to-transparent rounded-full blur-xl animate-float opacity-60"></div>
+                <div className="absolute bottom-2 right-2 w-20 h-20 bg-gradient-to-br from-steel-blue-200/40 via-steel-blue-300/20 to-transparent rounded-full blur-xl animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
+              </div>
+
               {/* Gradient overlay on hover */}
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl ${
                 skillGroup.color === 'maroon' 
