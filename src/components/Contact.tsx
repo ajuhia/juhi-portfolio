@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, MapPin, Linkedin, Send, Heart, Code, Database } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Send } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,47 +29,15 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-gradient-to-b from-slate-50/50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.15),transparent_70%)]"></div>
-        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_60%,rgba(71,85,105,0.15),transparent_70%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_40%,rgba(128,0,32,0.15),transparent_70%)]"></div>
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_60%,rgba(70,130,180,0.15),transparent_70%)]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Connect Section Content */}
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-block mb-8">
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Let's Connect & Collaborate</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-emerald-500 to-slate-500 mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="max-w-5xl mx-auto space-y-6 mb-12">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center p-6 bg-white/60 rounded-2xl shadow-lg border border-emerald-100">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center mb-4">
-                  <Heart className="h-8 w-8 text-emerald-600" />
-                </div>
-                <p className="text-lg text-slate-700 leading-relaxed font-poppins text-center">
-                  Passionate about solving real-world problems with data pipelines, AI, and intelligent systems.
-                </p>
-              </div>
-              
-              <div className="flex flex-col items-center p-6 bg-white/60 rounded-2xl shadow-lg border border-slate-100">
-                <div className="w-16 h-16 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mb-4">
-                  <Code className="h-8 w-8 text-slate-600" />
-                </div>
-                <p className="text-lg text-slate-700 leading-relaxed font-poppins text-center">
-                  Skilled in Python, SQL, R, and cloud-native development with AWS.
-                </p>
-              </div>
-              
-              <div className="flex flex-col items-center p-6 bg-white/60 rounded-2xl shadow-lg border border-emerald-100">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center mb-4">
-                  <Database className="h-8 w-8 text-emerald-600" />
-                </div>
-                <p className="text-lg text-slate-700 leading-relaxed font-poppins text-center">
-                  I build robust, maintainable backends and analytical frameworks that scale.
-                </p>
-              </div>
-            </div>
+            <div className="w-32 h-1 bg-gradient-to-r from-maroon-500 to-steel-blue-500 mx-auto rounded-full"></div>
           </div>
         </div>
 
@@ -85,8 +53,8 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all duration-300">
-                    <MapPin className="h-6 w-6 text-emerald-600" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-maroon-100 to-maroon-200 rounded-xl flex items-center justify-center group-hover:from-maroon-200 group-hover:to-maroon-300 transition-all duration-300">
+                    <MapPin className="h-6 w-6 text-maroon-600" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Location</h4>
@@ -95,54 +63,38 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center group-hover:from-slate-200 group-hover:to-slate-300 transition-all duration-300">
-                    <Mail className="h-6 w-6 text-slate-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">Email</h4>
-                    <a href="mailto:ajuhi31@gmail.com" className="text-emerald-600 hover:text-emerald-500 transition-colors">
-                      ajuhi31@gmail.com
-                    </a>
-                  </div>
+                  <a href="mailto:ajuhi31@gmail.com" className="flex items-center space-x-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-steel-blue-100 to-steel-blue-200 rounded-xl flex items-center justify-center group-hover:from-steel-blue-200 group-hover:to-steel-blue-300 transition-all duration-300">
+                      <Mail className="h-6 w-6 text-steel-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900">Email</h4>
+                      <p className="text-maroon-600 hover:text-maroon-500 transition-colors">
+                        ajuhi31@gmail.com
+                      </p>
+                    </div>
+                  </a>
                 </div>
 
                 <div className="flex items-center space-x-4 group">
-                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center group-hover:from-emerald-200 group-hover:to-emerald-300 transition-all duration-300">
-                    <Linkedin className="h-6 w-6 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900">LinkedIn</h4>
-                    <a 
-                      href="https://linkedin.com/in/juhianand" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-600 hover:text-slate-500 transition-colors"
-                    >
-                      Connect with me
-                    </a>
-                  </div>
+                  <a 
+                    href="https://linkedin.com/in/juhianand" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-4"
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-maroon-100 to-maroon-200 rounded-xl flex items-center justify-center group-hover:from-maroon-200 group-hover:to-maroon-300 transition-all duration-300">
+                      <Linkedin className="h-6 w-6 text-maroon-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900">LinkedIn</h4>
+                      <p className="text-steel-blue-600 hover:text-steel-blue-500 transition-colors">
+                        Connect with me
+                      </p>
+                    </div>
+                  </a>
                 </div>
               </div>
-            </div>
-
-            {/* Quick Contact Buttons */}
-            <div className="space-y-4">
-              <a 
-                href="mailto:ajuhi31@gmail.com"
-                className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white py-4 px-6 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
-              >
-                <Mail className="mr-3 h-5 w-5" />
-                Send Email
-              </a>
-              <a 
-                href="https://linkedin.com/in/juhianand"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-slate-600 to-slate-500 hover:from-slate-700 hover:to-slate-600 text-white py-4 px-6 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
-              >
-                <Linkedin className="mr-3 h-5 w-5" />
-                Connect on LinkedIn
-              </a>
             </div>
           </div>
 
@@ -152,7 +104,7 @@ const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-slate-50/70"></div>
               <CardHeader className="relative z-10">
                 <CardTitle className="text-2xl font-bold text-slate-900 font-poppins flex items-center">
-                  <Send className="mr-3 h-6 w-6 text-emerald-600" />
+                  <Send className="mr-3 h-6 w-6 text-maroon-600" />
                   Send a Message
                 </CardTitle>
               </CardHeader>
@@ -167,7 +119,7 @@ const Contact = () => {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="border-slate-300 focus:border-emerald-500 focus:ring-emerald-200 bg-white/70 backdrop-blur-sm rounded-xl"
+                        className="border-slate-300 focus:border-maroon-500 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
                         required
                       />
                     </div>
@@ -180,7 +132,7 @@ const Contact = () => {
                         placeholder="your.email@example.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className="border-slate-300 focus:border-emerald-500 focus:ring-emerald-200 bg-white/70 backdrop-blur-sm rounded-xl"
+                        className="border-slate-300 focus:border-maroon-500 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
                         required
                       />
                     </div>
@@ -194,14 +146,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="border-slate-300 focus:border-emerald-500 focus:ring-emerald-200 bg-white/70 backdrop-blur-sm rounded-xl resize-none"
+                      className="border-slate-300 focus:border-maroon-500 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl resize-none"
                       required
                     />
                   </div>
                   
                   <Button 
                     type="submit"
-                    className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-xl"
+                    className="w-full bg-gradient-to-r from-maroon-600 to-maroon-500 hover:from-maroon-700 hover:to-maroon-600 text-white py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-xl"
                   >
                     <Send className="mr-3 h-5 w-5" />
                     Send Message

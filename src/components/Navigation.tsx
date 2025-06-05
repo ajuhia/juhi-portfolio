@@ -55,7 +55,7 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-emerald-600 font-poppins">
+          <div className="text-2xl font-bold text-maroon-900 font-poppins">
             Juhi Anand
           </div>
           
@@ -64,8 +64,8 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-emerald-600 ${
-                  activeSection === item.id ? 'text-emerald-600' : 'text-slate-700'
+                className={`text-sm font-medium transition-colors duration-300 hover:text-maroon-600 ${
+                  activeSection === item.id ? 'text-maroon-600' : 'text-slate-700'
                 }`}
               >
                 {item.label}
@@ -78,7 +78,7 @@ const Navigation = () => {
               variant="outline"
               size="sm"
               onClick={() => scrollToSection('contact')}
-              className="border-emerald-500 text-emerald-600 hover:bg-emerald-600 hover:text-white"
+              className="border-maroon-500 text-maroon-600 hover:bg-maroon-600 hover:text-white"
             >
               Contact
             </Button>
