@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail } from 'lucide-react';
+import { Mail, MapPin, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +15,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
   };
 
@@ -27,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 font-poppins">Contact</h2>
@@ -36,7 +35,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-in">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6 font-poppins">Get in Touch</h3>
               <p className="text-gray-700 leading-relaxed mb-8">
@@ -48,7 +47,7 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-maroon/10 rounded-lg flex items-center justify-center">
-                  <span className="text-xl">📍</span>
+                  <MapPin className="h-6 w-6 text-maroon" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Location</h4>
@@ -68,21 +67,16 @@ const Contact = () => {
 
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-maroon/10 rounded-lg flex items-center justify-center">
-                  <span className="text-xl">📞</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Phone</h4>
-                  <p className="text-gray-600">(773) 270-0091</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-steel-blue/10 rounded-lg flex items-center justify-center">
-                  <span className="text-xl">🔗</span>
+                  <Linkedin className="h-6 w-6 text-maroon" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">LinkedIn</h4>
-                  <a href="#" className="text-steel-blue hover:text-steel-blue/80 transition-colors">
+                  <a 
+                    href="https://linkedin.com/in/juhianand" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-steel-blue hover:text-steel-blue/80 transition-colors"
+                  >
                     Connect with me
                   </a>
                 </div>
@@ -91,7 +85,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="shadow-lg border-0">
+          <Card className="shadow-lg border-0 animate-fade-in bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-gray-900 font-poppins">Send a Message</CardTitle>
             </CardHeader>

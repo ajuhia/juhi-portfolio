@@ -1,9 +1,27 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Download, Mail } from 'lucide-react';
+import { Download, Mail, Linkedin } from 'lucide-react';
 
 const Hero = () => {
+  const [animatedText, setAnimatedText] = useState('');
+  const fullText = 'Business Analytics Graduate | Data × AI Enthusiast | Data Engineer | Backend Developer';
+  const words = fullText.split(' ');
+
+  useEffect(() => {
+    let wordIndex = 0;
+    const interval = setInterval(() => {
+      if (wordIndex < words.length) {
+        setAnimatedText(words.slice(0, wordIndex + 1).join(' '));
+        wordIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 300);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
       {/* Background Animation */}
@@ -18,8 +36,8 @@ const Hero = () => {
             Hi, I'm <span className="text-maroon">Juhi Anand</span>.
           </h1>
           
-          <p className="text-xl sm:text-2xl lg:text-3xl text-steel-blue font-medium mb-8 font-poppins">
-            Data Engineer | Cloud Enthusiast | Business Analytics Graduate
+          <p className="text-xl sm:text-2xl lg:text-3xl text-steel-blue font-medium mb-8 font-poppins min-h-[80px]">
+            {animatedText}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -30,27 +48,6 @@ const Hero = () => {
               <Download className="mr-2 h-5 w-5" />
               Download Resume
             </Button>
-            
-            <div className="flex gap-4">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('https://linkedin.com', '_blank')}
-              >
-                LinkedIn
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-maroon text-maroon hover:bg-maroon hover:text-white px-8 py-3 text-lg font-medium transition-all duration-300 hover:scale-105"
-                onClick={() => window.location.href = 'mailto:ajuhi31@gmail.com'}
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                Email Me
-              </Button>
-            </div>
           </div>
         </div>
       </div>

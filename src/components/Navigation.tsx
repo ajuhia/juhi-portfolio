@@ -8,7 +8,9 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
+    { id: 'about', label: 'About Me' },
+    { id: 'connect', label: 'Connect' },
+    { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'education', label: 'Education' },
     { id: 'experience', label: 'Experience' },
@@ -58,7 +60,7 @@ const Navigation = () => {
             Juhi Anand
           </div>
           
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.id}

@@ -2,34 +2,6 @@
 import React from 'react';
 
 const About = () => {
-  const skills = [
-    {
-      category: "Programming",
-      items: ["Python", "R", "SQL", "Bash"],
-      icon: "💻"
-    },
-    {
-      category: "Data Tools",
-      items: ["Apache Airflow", "Hive", "SSIS", "Tableau", "Grafana"],
-      icon: "📊"
-    },
-    {
-      category: "Cloud Platforms",
-      items: ["AWS (Kinesis, Glue, Lambda, S3, Redshift)", "Docker"],
-      icon: "☁️"
-    },
-    {
-      category: "Databases",
-      items: ["PostgreSQL", "TimescaleDB", "DynamoDB"],
-      icon: "🗄️"
-    },
-    {
-      category: "Analytics",
-      items: ["NLP", "Time-Series Forecasting", "Regression", "EDA"],
-      icon: "🔍"
-    }
-  ];
-
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,56 +10,42 @@ const About = () => {
           <div className="w-24 h-1 bg-maroon mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Profile Photo */}
           <div className="animate-fade-in">
-            <div className="bg-gray-200 rounded-2xl shadow-lg overflow-hidden h-80 flex items-center justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face" 
-                alt="Juhi Anand" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative">
+              <div className="w-80 h-80 mx-auto bg-gray-200 rounded-full shadow-lg overflow-hidden border-4 border-white">
+                <div className="w-full h-full flex items-center justify-center text-gray-400">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">👤</div>
+                    <p className="text-lg font-medium">Profile Image</p>
+                    <p className="text-sm">Placeholder</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* About Text */}
           <div className="animate-fade-in">
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-lg">
+            <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed font-poppins">
-                I'm currently pursuing my Master's in Business Analytics at the University of Illinois Chicago. 
-                I bring over 5 years of experience across software development, data engineering, and cloud-based analytics. 
-                My work spans industries and countries—applying advanced machine learning, scalable data pipelines, 
-                and data visualization to solve meaningful problems.
+                Hi Everyone! I'm Juhi Anand, a data engineer and analytics professional passionate about 
+                transforming data into intelligent, impactful systems. With a strong foundation in computer 
+                science and a deep curiosity for machine learning and cloud-based automation, I thrive at 
+                the intersection of engineering and problem-solving.
+              </p>
+              
+              <p className="text-lg text-gray-700 leading-relaxed font-poppins">
+                I'm currently pursuing my Master's in Business Analytics at the University of Illinois Chicago, 
+                constantly experimenting with innovative ways to make data more accessible, insightful, and usable.
+              </p>
+              
+              <p className="text-lg text-gray-700 leading-relaxed font-poppins">
+                When I'm not coding or exploring new technologies, I enjoy giving back through mentorship 
+                and community work—helping bridge gaps in opportunity and access through tech.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Skills Section - Horizontal Layout */}
-        <div className="animate-fade-in">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center font-poppins">Skills & Expertise</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {skills.map((skillGroup, index) => (
-              <div 
-                key={skillGroup.category}
-                className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-steel-blue/50 hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                <div className="flex items-center mb-3">
-                  <span className="text-2xl mr-3">{skillGroup.icon}</span>
-                  <h4 className="text-lg font-semibold text-maroon/70 font-poppins">{skillGroup.category}</h4>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((skill, skillIndex) => (
-                    <span 
-                      key={skillIndex}
-                      className="px-3 py-1 bg-gray-50 text-gray-600 rounded-full text-sm font-medium"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
