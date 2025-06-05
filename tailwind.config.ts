@@ -28,36 +28,36 @@ export default {
 				background: '#f8fafc',
 				foreground: '#0f172a',
 				primary: {
-					DEFAULT: '#500000',
+					DEFAULT: '#a23c3c',
 					foreground: '#ffffff'
 				},
 				secondary: {
-					DEFAULT: '#4682B4',
+					DEFAULT: '#6a9bbd',
 					foreground: '#ffffff'
 				},
 				maroon: {
-					50: '#fef2f2',
-					100: '#fee2e2',
-					200: '#fecaca',
-					300: '#fca5a5',
-					400: '#f87171',
-					500: '#ef4444',
-					600: '#dc2626',
-					700: '#b91c1c',
-					800: '#991b1b',
-					900: '#500000'
+					50: '#fef7f7',
+					100: '#fdeaea',
+					200: '#fad5d5',
+					300: '#f5b2b2',
+					400: '#ed7f7f',
+					500: '#e05555',
+					600: '#cc3c3c',
+					700: '#a23c3c',
+					800: '#8a3535',
+					900: '#753333'
 				},
 				'steel-blue': {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#4682B4'
+					50: '#f4f8fb',
+					100: '#e8f1f6',
+					200: '#d6e6ee',
+					300: '#bdd4e1',
+					400: '#9fbdd0',
+					500: '#6a9bbd',
+					600: '#5a8aaf',
+					700: '#4f7ba0',
+					800: '#456883',
+					900: '#3b576a'
 				},
 				slate: {
 					50: '#f8fafc',

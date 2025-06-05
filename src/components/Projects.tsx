@@ -70,7 +70,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-maroon-100/30 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-emerald-100/30 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-br from-slate-100/30 to-transparent rounded-full blur-3xl"></div>
       </div>
 
@@ -78,7 +78,7 @@ const Projects = () => {
         <div className="text-center mb-20">
           <div className="inline-block">
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 font-poppins">Featured Projects</h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-maroon-900 to-steel-blue-900 mx-auto rounded-full"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-emerald-500 to-slate-500 mx-auto rounded-full"></div>
           </div>
           <p className="text-xl text-slate-600 mt-6 max-w-3xl mx-auto">
             Innovative solutions at the intersection of data science, AI, and real-world impact
@@ -92,7 +92,7 @@ const Projects = () => {
               key={index}
               className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer border-0 shadow-lg overflow-hidden bg-white relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-maroon-50/50 to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
@@ -107,13 +107,13 @@ const Projects = () => {
               <CardHeader className="pb-4 relative z-10">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-maroon-900 transition-colors duration-300 font-poppins mb-3">
+                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors duration-300 font-poppins mb-3">
                       {project.title}
                     </CardTitle>
-                    <div className="w-12 h-1 bg-gradient-to-r from-maroon-900 to-steel-blue-900 rounded-full mb-4"></div>
+                    <div className="w-12 h-1 bg-gradient-to-r from-emerald-500 to-slate-500 rounded-full mb-4"></div>
                   </div>
-                  <div className="bg-maroon-100 p-2 rounded-lg">
-                    <ExternalLink className="h-5 w-5 text-maroon-900" />
+                  <div className="bg-emerald-100 p-2 rounded-lg">
+                    <ExternalLink className="h-5 w-5 text-emerald-600" />
                   </div>
                 </div>
                 <CardDescription className="text-slate-600 leading-relaxed text-base">
@@ -125,7 +125,7 @@ const Projects = () => {
                   {project.tools.map((tool, toolIndex) => (
                     <span 
                       key={toolIndex}
-                      className="px-3 py-1 bg-slate-100/80 backdrop-blur-sm text-slate-700 rounded-full text-sm font-medium border border-slate-200/50 hover:border-maroon-300 transition-colors duration-300"
+                      className="px-3 py-1 bg-slate-100/80 backdrop-blur-sm text-slate-700 rounded-full text-sm font-medium border border-slate-200/50 hover:border-emerald-300 transition-colors duration-300"
                     >
                       {tool}
                     </span>
@@ -134,7 +134,7 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <Button 
                     variant="outline"
-                    className="flex-1 border-maroon-200 text-maroon-900 hover:bg-maroon-900 hover:text-white transition-all duration-300 rounded-lg"
+                    className="flex-1 border-emerald-200 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 rounded-lg"
                     onClick={() => console.log(`Navigate to project: ${project.slug}`)}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
@@ -172,7 +172,7 @@ const Projects = () => {
                 </div>
                 
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-lg font-bold text-slate-900 group-hover:text-maroon-900 transition-colors duration-300 font-poppins">
+                  <CardTitle className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors duration-300 font-poppins">
                     {project.title}
                   </CardTitle>
                   <CardDescription className="text-slate-600 leading-relaxed text-sm">
@@ -193,7 +193,7 @@ const Projects = () => {
                   <Button 
                     variant="outline"
                     size="sm"
-                    className="w-full border-maroon-200 text-maroon-900 hover:bg-maroon-900 hover:text-white transition-all duration-300"
+                    className="w-full border-emerald-200 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300"
                     onClick={() => console.log(`Navigate to project: ${project.slug}`)}
                   >
                     Learn More
