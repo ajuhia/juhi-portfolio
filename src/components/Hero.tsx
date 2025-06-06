@@ -61,10 +61,10 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50 px-4 sm:px-6 lg:px-8">
-      {/* Background layers - reordered to ensure BackgroundCircles is more visible */}
+      {/* Background layers - optimized order for subtle effect */}
+      <BackgroundCircles />
       <DynamicGradients />
       <TextureOverlay />
-      <BackgroundCircles />
       <ParticleSystem />
       
       <div className="relative z-10 text-center max-w-7xl mx-auto w-full">
