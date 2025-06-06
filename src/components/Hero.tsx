@@ -72,7 +72,7 @@ const Hero = () => {
                 {/* Text Content Section */}
                 <div className="flex-1 order-2 lg:order-2 text-center lg:text-left">
                   <div className="mb-6 lg:mb-8">
-                    <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-medium mb-4 lg:mb-6 tracking-wide">Hello there! Welcome to my world</p>
+                    <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-medium mb-4 lg:mb-6 tracking-wide">Hi There!</p>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 lg:mb-6 font-poppins leading-tight">
                       I'm <span className="bg-gradient-to-r from-maroon-700 via-maroon-600 to-maroon-500 bg-clip-text text-transparent animate-shimmer bg-size-200">Juhi Anand</span>
                     </h1>
