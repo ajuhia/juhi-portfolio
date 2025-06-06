@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Home } from 'lucide-react';
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home', isIcon: true },
+    { id: 'home', label: 'About Me' },
     { id: 'about', label: 'About Me' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
@@ -55,7 +54,7 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-steel-blue-700 font-poppins">
+          <div className="text-2xl font-bold text-maroon-700 font-poppins">
             Juhi Anand
           </div>
           
@@ -64,11 +63,11 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-lg font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
-                  activeSection === item.id ? 'text-maroon-700' : 'text-maroon-600'
+                className={`text-base font-medium transition-colors duration-300 hover:text-slate-600 flex items-center ${
+                  activeSection === item.id ? 'text-slate-800' : 'text-slate-700'
                 }`}
               >
-                {item.isIcon ? <Home size={22} /> : item.label}
+                {item.label}
               </button>
             ))}
           </div>
