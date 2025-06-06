@@ -51,11 +51,11 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-steel-blue-200' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-maroon-200' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-steel-blue-700 font-poppins">
+          <div className="text-2xl font-bold text-maroon-700 font-poppins">
             Juhi Anand
           </div>
           
@@ -64,8 +64,8 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-base font-medium transition-colors duration-300 hover:text-steel-blue-600 flex items-center ${
-                  activeSection === item.id ? 'text-steel-blue-600' : 'text-slate-700'
+                className={`text-base font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
+                  activeSection === item.id ? 'text-maroon-600' : 'text-maroon-700'
                 }`}
               >
                 {item.isIcon ? <Home size={20} /> : item.label}
@@ -78,7 +78,7 @@ const Navigation = () => {
               variant="outline"
               size="sm"
               onClick={() => scrollToSection('contact')}
-              className="border-steel-blue-500 text-steel-blue-600 hover:bg-steel-blue-600 hover:text-white"
+              className="border-maroon-500 text-maroon-600 hover:bg-maroon-600 hover:text-white"
             >
               Contact
             </Button>
