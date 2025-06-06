@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [currentRoleText, setCurrentRoleText] = useState('');
@@ -48,6 +47,13 @@ const Hero = () => {
 
     return () => clearTimeout(timeoutId);
   }, [currentRoleText, currentRoleIndex, isDeleting, isTyping, roles]);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50 px-4 sm:px-6 lg:px-8">
@@ -122,12 +128,12 @@ const Hero = () => {
           </div>
 
           <div className="animate-bounce mt-6 sm:mt-8">
-            <Link 
-              to="/about"
+            <button 
+              onClick={() => scrollToSection('about')}
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-slate-300/60 bg-white/30 backdrop-blur-sm flex items-center justify-center hover:border-maroon-500 hover:bg-maroon-50/50 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-slate-600" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>
