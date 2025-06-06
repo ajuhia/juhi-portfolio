@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Home } from 'lucide-react';
@@ -8,7 +7,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home', isIcon: true },
+    { id: 'home', label: 'About Me', isIcon: false },
     { id: 'about', label: 'About Me' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
@@ -65,10 +64,10 @@ const Navigation = () => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`text-base font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
-                  activeSection === item.id ? 'text-maroon-600' : 'text-maroon-700'
+                  activeSection === item.id ? 'text-maroon-600' : 'text-black'
                 }`}
               >
-                {item.isIcon ? <Home size={20} /> : item.label}
+                {item.label}
               </button>
             ))}
           </div>
