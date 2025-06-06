@@ -61,11 +61,11 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50 px-4 sm:px-6 lg:px-8">
-      {/* Enhanced background layers with circles */}
-      <ParticleSystem />
+      {/* Background layers - reordered to ensure BackgroundCircles is more visible */}
       <DynamicGradients />
       <TextureOverlay />
       <BackgroundCircles />
+      <ParticleSystem />
       
       <div className="relative z-10 text-center max-w-7xl mx-auto w-full">
         <div className="animate-fade-in">
