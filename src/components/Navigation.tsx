@@ -64,11 +64,11 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-base font-medium transition-colors duration-300 hover:text-steel-blue-600 flex items-center ${
-                  activeSection === item.id ? 'text-steel-blue-600' : 'text-slate-700'
+                className={`text-lg font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
+                  activeSection === item.id ? 'text-maroon-700' : 'text-maroon-600'
                 }`}
               >
-                {item.isIcon ? <Home size={20} /> : item.label}
+                {item.isIcon ? <Home size={22} /> : item.label}
               </button>
             ))}
           </div>
