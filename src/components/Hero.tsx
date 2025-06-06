@@ -67,9 +67,9 @@ const Hero = () => {
       <BackgroundCircles />
       <ParticleSystem />
       
-      <div className="relative z-10 text-center max-w-7xl mx-auto w-full">
+      <div className="relative z-10 text-center max-w-full mx-auto w-full">
         <div className="animate-fade-in">
-          <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-steel-blue-200/50 shadow-2xl shadow-steel-blue-300/20 relative overflow-hidden mx-auto max-w-6xl">
+          <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-steel-blue-200/50 shadow-2xl shadow-steel-blue-300/20 relative overflow-hidden mx-auto w-full max-w-none">
             {/* Enhanced background gradients inside the text box with steel blue and maroon */}
             <div className="absolute inset-0">
               {/* Primary gradient mesh with steel blue and maroon */}
