@@ -59,16 +59,16 @@ const Navigation = () => {
             Juhi Anand
           </div>
           
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-steel-blue-600 flex items-center ${
+                className={`text-base font-medium transition-colors duration-300 hover:text-steel-blue-600 flex items-center ${
                   activeSection === item.id ? 'text-steel-blue-600' : 'text-slate-700'
                 }`}
               >
-                {item.isIcon ? <Home size={18} /> : item.label}
+                {item.isIcon ? <Home size={20} /> : item.label}
               </button>
             ))}
           </div>
