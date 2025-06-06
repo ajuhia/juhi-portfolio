@@ -63,8 +63,8 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-base font-medium transition-colors duration-300 hover:text-slate-600 flex items-center ${
-                  activeSection === item.id ? 'text-slate-800' : 'text-slate-700'
+                className={`text-base font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
+                  activeSection === item.id ? 'text-maroon-700' : 'text-maroon-600'
                 }`}
               >
                 {item.label}
