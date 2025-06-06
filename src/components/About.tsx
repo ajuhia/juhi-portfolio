@@ -21,13 +21,15 @@ const About = () => {
           <div className="animate-fade-in max-w-4xl">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
               <p className="text-lg text-slate-700 leading-relaxed font-poppins">
-                Hey there! 👋 I'm <span className="font-semibold text-maroon-700">Juhi</span>, and I'm absolutely fascinated by the magic that happens when data meets creativity. You know that feeling when you discover a hidden pattern in seemingly random numbers? That's my daily dose of excitement!
+                Hi! I'm a tech enthusiast who believes in the power of technology to drive meaningful change and solve real-world problems.
                 <br /><br />
-                Currently, I'm diving deep into my <span className="font-semibold text-steel-blue-600">Master's in Business Analytics</span> at UIC, where every day feels like solving a new puzzle. I love building systems that don't just process data, but tell compelling stories and drive real decisions.
+                My journey into tech has always been guided by curiosity—curiosity about how systems interact, how data can inform better decisions, and how thoughtful design can transform technical solutions into meaningful impact. Whether it's building scalable infrastructure, uncovering insights from complex data, or applying technology to everyday challenges, I find purpose in creating systems that are both intelligent and human-centered.
                 <br /><br />
-                When I'm not elbow-deep in code or wrestling with APIs, you'll find me mentoring fellow tech enthusiasts and actively participating in community building initiatives. I'm passionate about fostering inclusive tech communities and regularly contribute to open-source projects that make technology more accessible to everyone.
+                Currently, I'm pursuing my <span className="font-semibold text-steel-blue-600">Master's in Business Analytics at the University of Illinois Chicago</span>, where I'm exploring everything from data science and machine learning to cloud technologies and artificial intelligence. Every project I take on is a chance to learn, collaborate, and build something useful.
                 <br /><br />
-                Fun fact: I once spent an entire weekend debugging a data pipeline just because I was curious about why it was behaving oddly. That's probably not normal, but hey, that's what makes this field so thrilling for me! 🚀
+                Outside of academics and work, I'm passionate about mentoring and community engagement. I've supported student growth through Mentor-Together and contributed to Corporate Social Responsibility programs—because I believe meaningful innovation starts with empathy and inclusion.
+                <br /><br />
+                Right now, I'm diving deeper into the world of AI—curious, excited, and always learning. If you're passionate about <span className="font-semibold text-maroon-700">analytics, responsible tech, or building tools that make a difference</span>, let's connect. 🚀
               </p>
             </div>
           </div>
