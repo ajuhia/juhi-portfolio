@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Home } from 'lucide-react';
@@ -7,7 +8,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'About Me', isIcon: false },
+    { id: 'home', label: 'Home', isIcon: true },
     { id: 'about', label: 'About Me' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
@@ -67,7 +68,7 @@ const Navigation = () => {
                   activeSection === item.id ? 'text-maroon-600' : 'text-black'
                 }`}
               >
-                {item.label}
+                {item.isIcon ? <Home size={20} /> : item.label}
               </button>
             ))}
           </div>
