@@ -2,51 +2,34 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Home } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
-  const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { id: 'home', label: 'Home', isIcon: true },
-    { id: 'about', label: 'About Me' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'education', label: 'Education' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'home', label: 'Home', isIcon: true, path: '/' },
+    { id: 'about', label: 'About Me', path: '/about' },
+    { id: 'skills', label: 'Skills', path: '/skills' },
+    { id: 'projects', label: 'Projects', path: '/projects' },
+    { id: 'education', label: 'Education', path: '/education' },
+    { id: 'experience', label: 'Experience', path: '/experience' },
+    { id: 'certifications', label: 'Certifications', path: '/certifications' },
+    { id: 'contact', label: 'Contact', path: '/contact' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
-      // Update active section based on scroll position
-      const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
-
-      sections.forEach((section, index) => {
-        if (section) {
-          const offsetTop = section.offsetTop;
-          const offsetBottom = offsetTop + section.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(navItems[index].id);
-          }
-        }
-      });
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const isActivePage = (path: string) => {
+    return location.pathname === path;
   };
 
   return (
@@ -55,33 +38,34 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-maroon-700 font-poppins">
+          <Link to="/" className="text-2xl font-bold text-maroon-700 font-poppins hover:text-maroon-600 transition-colors">
             Juhi Anand
-          </div>
+          </Link>
           
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                to={item.path}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
-                  activeSection === item.id ? 'text-maroon-600' : 'text-slate-700'
+                  isActivePage(item.path) ? 'text-maroon-600' : 'text-slate-700'
                 }`}
               >
                 {item.isIcon ? <Home size={18} /> : item.label}
-              </button>
+              </Link>
             ))}
           </div>
 
           <div className="md:hidden">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => scrollToSection('contact')}
-              className="border-maroon-500 text-maroon-600 hover:bg-maroon-600 hover:text-white"
-            >
-              Contact
-            </Button>
+            <Link to="/contact">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-maroon-500 text-maroon-600 hover:bg-maroon-600 hover:text-white"
+              >
+                Contact
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,15 +1,15 @@
 
 import React from 'react';
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
 
-const Index = () => {
+const ProjectsPage = () => {
   return (
     <div className="font-poppins bg-background text-foreground">
       <Navigation />
-      <Hero />
+      <Projects />
     </div>
   );
 };
 
-export default Index;
+export default ProjectsPage;

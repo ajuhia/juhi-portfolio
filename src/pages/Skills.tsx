@@ -1,15 +1,15 @@
 
 import React from 'react';
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
+import Skills from '@/components/Skills';
 
-const Index = () => {
+const SkillsPage = () => {
   return (
     <div className="font-poppins bg-background text-foreground">
       <Navigation />
-      <Hero />
+      <Skills />
     </div>
   );
 };
 
-export default Index;
+export default SkillsPage;

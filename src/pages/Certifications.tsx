@@ -1,15 +1,15 @@
 
 import React from 'react';
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
+import Certifications from '@/components/Certifications';
 
-const Index = () => {
+const CertificationsPage = () => {
   return (
     <div className="font-poppins bg-background text-foreground">
       <Navigation />
-      <Hero />
+      <Certifications />
     </div>
   );
 };
 
-export default Index;
+export default CertificationsPage;
