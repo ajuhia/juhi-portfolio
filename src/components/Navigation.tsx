@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Home } from 'lucide-react';
@@ -54,7 +55,7 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-maroon-700 font-poppins">
+          <div className="text-2xl font-bold text-steel-blue-700 font-poppins">
             Juhi Anand
           </div>
           
@@ -63,8 +64,8 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-maroon-600 flex items-center ${
-                  activeSection === item.id ? 'text-maroon-600' : 'text-slate-700'
+                className={`text-sm font-medium transition-colors duration-300 hover:text-steel-blue-600 flex items-center ${
+                  activeSection === item.id ? 'text-steel-blue-600' : 'text-slate-700'
                 }`}
               >
                 {item.isIcon ? <Home size={18} /> : item.label}
@@ -77,7 +78,7 @@ const Navigation = () => {
               variant="outline"
               size="sm"
               onClick={() => scrollToSection('contact')}
-              className="border-maroon-500 text-maroon-600 hover:bg-maroon-600 hover:text-white"
+              className="border-steel-blue-500 text-steel-blue-600 hover:bg-steel-blue-600 hover:text-white"
             >
               Contact
             </Button>

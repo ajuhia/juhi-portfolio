@@ -4,22 +4,49 @@ import { Button } from '@/components/ui/button';
 import { Download, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
-  const [animatedText, setAnimatedText] = useState('');
-  const fullText = 'Business Analytics Graduate | Data × AI Enthusiast | Data Engineer | Backend Developer';
+  const [currentRoleText, setCurrentRoleText] = useState('');
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isTyping, setIsTyping] = useState(true);
+
+  const roles = [
+    'Business Analytics Graduate',
+    'Data × AI Enthusiast', 
+    'Data Engineer',
+    'Backend Developer'
+  ];
 
   useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setAnimatedText(fullText.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 50);
+    const currentRole = roles[currentRoleIndex];
+    let timeoutId: NodeJS.Timeout;
 
-    return () => clearInterval(interval);
-  }, []);
+    if (isTyping && !isDeleting) {
+      // Typing animation
+      if (currentRoleText.length < currentRole.length) {
+        timeoutId = setTimeout(() => {
+          setCurrentRoleText(currentRole.slice(0, currentRoleText.length + 1));
+        }, 100);
+      } else {
+        // Finished typing, wait then start deleting
+        timeoutId = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000);
+      }
+    } else if (isDeleting) {
+      // Deleting animation
+      if (currentRoleText.length > 0) {
+        timeoutId = setTimeout(() => {
+          setCurrentRoleText(currentRoleText.slice(0, -1));
+        }, 50);
+      } else {
+        // Finished deleting, move to next role
+        setIsDeleting(false);
+        setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+      }
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [currentRoleText, currentRoleIndex, isDeleting, isTyping, roles]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -72,7 +99,7 @@ const Hero = () => {
                 {/* Text Content Section */}
                 <div className="flex-1 order-2 lg:order-2 text-center lg:text-left">
                   <div className="mb-6 lg:mb-8">
-                    <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-medium mb-4 lg:mb-6 tracking-wide">Hi There!</p>
+                    <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 font-medium mb-4 lg:mb-6 tracking-wide">Hi There!</p>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 lg:mb-6 font-poppins leading-tight">
                       I'm <span className="bg-gradient-to-r from-maroon-700 via-maroon-600 to-maroon-500 bg-clip-text text-transparent animate-shimmer bg-size-200">Juhi Anand</span>
                     </h1>
@@ -80,7 +107,7 @@ const Hero = () => {
                   
                   <div className="mb-8 lg:mb-12">
                     <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-slate-700 font-medium font-poppins min-h-[80px] sm:min-h-[100px] leading-relaxed">
-                      {animatedText}
+                      {currentRoleText}
                       <span className="animate-pulse text-maroon-500">|</span>
                     </p>
                   </div>
