@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, ChevronDown } from 'lucide-react';
+import ParticleSystem from './ParticleSystem';
+import DynamicGradients from './DynamicGradients';
+import TextureOverlay from './TextureOverlay';
 
 const Hero = () => {
   const [currentRoleText, setCurrentRoleText] = useState('');
@@ -57,24 +60,29 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50 px-4 sm:px-6 lg:px-8">
+      {/* Enhanced background layers */}
+      <ParticleSystem />
+      <DynamicGradients />
+      <TextureOverlay />
+      
       <div className="relative z-10 text-center max-w-7xl mx-auto w-full">
         <div className="animate-fade-in">
-          <div className="bg-maroon-700/30 backdrop-blur-lg rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-white/30 shadow-2xl shadow-maroon-200/20 relative overflow-hidden mx-auto max-w-6xl">
-            {/* Background gradients moved inside the text box */}
+          <div className="bg-white/40 backdrop-blur-lg rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 border border-white/50 shadow-2xl shadow-maroon-200/20 relative overflow-hidden mx-auto max-w-6xl">
+            {/* Enhanced background gradients inside the text box */}
             <div className="absolute inset-0">
-              {/* Primary gradient mesh */}
-              <div className="absolute inset-0 bg-gradient-to-br from-maroon-100/60 via-transparent to-steel-blue-100/60 rounded-3xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-maroon-50/40 to-transparent rounded-3xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-bl from-steel-blue-50/50 via-transparent to-maroon-50/30 rounded-3xl"></div>
+              {/* Primary gradient mesh with enhanced opacity */}
+              <div className="absolute inset-0 bg-gradient-to-br from-maroon-100/40 via-transparent to-steel-blue-100/40 rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-maroon-50/30 to-transparent rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-bl from-steel-blue-50/35 via-transparent to-maroon-50/25 rounded-3xl"></div>
               
-              {/* Animated floating elements with enhanced gradients */}
-              <div className="absolute top-4 left-4 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br from-maroon-200/50 via-maroon-300/30 to-transparent rounded-full blur-2xl animate-float opacity-70"></div>
-              <div className="absolute bottom-4 right-4 w-24 h-24 sm:w-40 sm:h-40 bg-gradient-to-br from-steel-blue-200/50 via-steel-blue-300/30 to-transparent rounded-full blur-2xl animate-float opacity-70" style={{ animationDelay: '2s' }}></div>
-              <div className="absolute top-1/3 right-1/4 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-maroon-300/40 via-maroon-400/20 to-transparent rounded-full blur-xl animate-float opacity-60" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute bottom-1/4 left-1/3 w-18 h-18 sm:w-28 sm:h-28 bg-gradient-to-br from-steel-blue-300/35 via-steel-blue-400/20 to-transparent rounded-full blur-2xl animate-float opacity-50" style={{ animationDelay: '3s' }}></div>
+              {/* Enhanced animated floating elements */}
+              <div className="absolute top-4 left-4 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br from-maroon-200/40 via-maroon-300/25 to-transparent rounded-full blur-2xl animate-float opacity-60"></div>
+              <div className="absolute bottom-4 right-4 w-24 h-24 sm:w-40 sm:h-40 bg-gradient-to-br from-steel-blue-200/40 via-steel-blue-300/25 to-transparent rounded-full blur-2xl animate-float opacity-60" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute top-1/3 right-1/4 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-maroon-300/30 via-maroon-400/15 to-transparent rounded-full blur-xl animate-float opacity-50" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute bottom-1/4 left-1/3 w-18 h-18 sm:w-28 sm:h-28 bg-gradient-to-br from-steel-blue-300/30 via-steel-blue-400/15 to-transparent rounded-full blur-2xl animate-float opacity-45" style={{ animationDelay: '3s' }}></div>
               
               {/* Additional mesh overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent rounded-3xl"></div>
             </div>
 
             <div className="relative z-10">
@@ -90,8 +98,8 @@ const Hero = () => {
                         alt="Juhi Anand"
                         className="w-full h-full object-cover"
                       />
-                      {/* Hover effect */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-maroon-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      {/* Enhanced hover effect */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-maroon-500/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   </div>
                 </div>
