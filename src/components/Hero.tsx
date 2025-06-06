@@ -5,6 +5,7 @@ import { Download, ChevronDown } from 'lucide-react';
 import ParticleSystem from './ParticleSystem';
 import DynamicGradients from './DynamicGradients';
 import TextureOverlay from './TextureOverlay';
+import BackgroundCircles from './BackgroundCircles';
 
 const Hero = () => {
   const [currentRoleText, setCurrentRoleText] = useState('');
@@ -60,10 +61,11 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-slate-50 px-4 sm:px-6 lg:px-8">
-      {/* Enhanced background layers */}
+      {/* Enhanced background layers with circles */}
       <ParticleSystem />
       <DynamicGradients />
       <TextureOverlay />
+      <BackgroundCircles />
       
       <div className="relative z-10 text-center max-w-7xl mx-auto w-full">
         <div className="animate-fade-in">
