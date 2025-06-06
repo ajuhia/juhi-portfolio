@@ -18,9 +18,9 @@ const About = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className="animate-fade-in max-w-4xl">
+          <div className="animate-fade-in max-w-6xl">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300">
-              <p className="text-lg text-slate-700 leading-relaxed font-poppins">
+              <p className="text-lg text-slate-700 leading-relaxed font-poppins text-justify">
                 Hi! I'm a tech enthusiast who believes in the power of technology to drive meaningful change and solve real-world problems.
                 <br /><br />
                 My journey into tech has always been guided by curiosity—curiosity about how systems interact, how data can inform better decisions, and how thoughtful design can transform technical solutions into meaningful impact. Whether it's building scalable infrastructure, uncovering insights from complex data, or applying technology to everyday challenges, I find purpose in creating systems that are both intelligent and human-centered.
