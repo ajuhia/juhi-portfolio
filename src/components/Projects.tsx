@@ -12,10 +12,10 @@ const Projects = () => {
     {
       title: "TikTok Mental Health Analysis",
       description: "Detected depression and emotional indicators using LLMs; modeled engagement via statistical learning.",
-      tools: ["Gemini", "Whisper", "Python"],
+      tools: ["Gemini", "Python"],
       slug: "tiktok-mental-health-analysis",
       featured: true,
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=300&fit=crop"
+      image: "/lovable-uploads/97d649d7-4b3b-49c5-91e7-a2f9483f1b23.png"
     },
     {
       title: "Voice-Based Mental Wellness Assistant",

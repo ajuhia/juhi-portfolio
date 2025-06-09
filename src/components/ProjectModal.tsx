@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -28,7 +27,9 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
   const projectDetails = {
     "tiktok-mental-health-analysis": {
-      fullDescription: "This project leverages advanced Large Language Models (LLMs) including Gemini and Whisper to analyze TikTok content for mental health indicators. The system processes both video and audio content to detect patterns associated with depression and emotional distress, while also modeling user engagement through statistical learning techniques.",
+      fullDescription: "This project explores the intersection of mental health, social media, and artificial intelligence. Using a curated dataset of TikTok videos related to depression, the goal was to assess how emotional and psychological signals expressed through video, audio, and text influence viewer engagement. By leveraging the power of multimodal large language models (LLMs), the study aimed to detect mental health cues and understand the dynamics of audience interaction with emotionally charged content.",
+      modelingApproach: "Engagement trends such as likes, comments, and shares were analyzed in relation to video content, user characteristics, and AI-derived emotional signals. Custom prompting strategies were developed to extract nuanced insights from multimodal data. The analysis combined traditional features with deep emotional indicators to identify patterns linked to viewer interaction and response.",
+      toolsAndTechniques: "The project combined data science with AI-powered text and emotion analysis using: Multimodal LLMs (Gemini 2.0 Flash) for structured emotion and symptom extraction, Exploratory Data Analysis and demographic profiling, Python, Pandas, Scikit-learn, Seaborn, and other python libraries. This study offers valuable insight into how platforms and creators can better understand the emotional dynamics behind mental health-related content.",
       challenges: [
         "Processing multimodal data (video, audio, text) at scale",
         "Ensuring ethical AI practices in mental health detection",
@@ -41,7 +42,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         "Developed engagement prediction model with 78% precision",
         "Created ethical guidelines for mental health AI applications"
       ],
-      techStack: ["Google Gemini API", "OpenAI Whisper", "Python", "TensorFlow", "Pandas", "NumPy", "Scikit-learn"]
+      techStack: ["Google Gemini 2.0 Flash", "Python", "Pandas", "NumPy", "Scikit-learn", "Seaborn"]
     },
     "voice-mental-wellness-assistant": {
       fullDescription: "An innovative voice-guided mental health support application that combines conversational AI with emotional intelligence. The system uses ElevenLabs for natural voice synthesis, n8n for workflow automation, and advanced NLP models to provide personalized mental wellness guidance and support.",
@@ -170,9 +171,25 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
           {/* Full Description */}
           <div>
-            <h3 className="text-lg font-semibold text-maroon-700 mb-3">Project Overview</h3>
+            <h3 className="text-lg font-semibold text-maroon-700 mb-3">Overview</h3>
             <p className="text-slate-700 leading-relaxed">{details.fullDescription}</p>
           </div>
+
+          {/* Modeling Approach (for TikTok project) */}
+          {project.slug === "tiktok-mental-health-analysis" && details.modelingApproach && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Modeling Approach</h3>
+              <p className="text-slate-700 leading-relaxed">{details.modelingApproach}</p>
+            </div>
+          )}
+
+          {/* Tools & Techniques (for TikTok project) */}
+          {project.slug === "tiktok-mental-health-analysis" && details.toolsAndTechniques && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Tools & Techniques</h3>
+              <p className="text-slate-700 leading-relaxed">{details.toolsAndTechniques}</p>
+            </div>
+          )}
 
           {/* Tech Stack */}
           <div>
@@ -190,30 +207,34 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           </div>
 
           {/* Challenges */}
-          <div>
-            <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Challenges</h3>
-            <ul className="space-y-2">
-              {details.challenges.map((challenge, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-maroon-700 mr-2">•</span>
-                  <span className="text-slate-700">{challenge}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {project.slug !== "tiktok-mental-health-analysis" && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Challenges</h3>
+              <ul className="space-y-2">
+                {details.challenges.map((challenge, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-maroon-700 mr-2">•</span>
+                    <span className="text-slate-700">{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Results */}
-          <div>
-            <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Results</h3>
-            <ul className="space-y-2">
-              {details.results.map((result, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-steel-blue-600 mr-2">✓</span>
-                  <span className="text-slate-700">{result}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {project.slug !== "tiktok-mental-health-analysis" && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Results</h3>
+              <ul className="space-y-2">
+                {details.results.map((result, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-steel-blue-600 mr-2">✓</span>
+                    <span className="text-slate-700">{result}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4 border-t">
