@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 interface Particle {
@@ -18,11 +19,11 @@ const ParticleSystem: React.FC = () => {
   const animationFrameRef = useRef<number>();
 
   const colors = [
-    'rgba(139, 105, 20, 0.6)',   // coffee brown
-    'rgba(160, 132, 92, 0.6)',  // warm beige
+    'rgba(162, 60, 60, 0.6)',   // maroon
+    'rgba(106, 155, 189, 0.6)', // steel-blue
     'rgba(255, 255, 255, 0.4)', // white
-    'rgba(115, 81, 30, 0.3)',   // darker coffee
-    'rgba(188, 145, 107, 0.3)', // lighter beige
+    'rgba(162, 60, 60, 0.3)',   // lighter maroon
+    'rgba(106, 155, 189, 0.3)', // lighter steel-blue
   ];
 
   const createParticle = (canvas: HTMLCanvasElement): Particle => {
