@@ -25,8 +25,8 @@ const TextureOverlay: React.FC = () => {
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(162, 60, 60, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(106, 155, 189, 0.1) 1px, transparent 1px)
+            linear-gradient(rgba(139, 105, 20, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(160, 132, 92, 0.1) 1px, transparent 1px)
           `,
           backgroundSize: '50px 50px',
           mixBlendMode: 'overlay'
@@ -38,10 +38,10 @@ const TextureOverlay: React.FC = () => {
         className="absolute inset-0 opacity-15"
         style={{
           backgroundImage: `
-            radial-gradient(ellipse at 30% 20%, rgba(162, 60, 60, 0.1) 0%, transparent 40%),
-            radial-gradient(ellipse at 70% 80%, rgba(106, 155, 189, 0.1) 0%, transparent 35%),
-            radial-gradient(ellipse at 10% 70%, rgba(162, 60, 60, 0.05) 0%, transparent 30%),
-            radial-gradient(ellipse at 90% 30%, rgba(106, 155, 189, 0.05) 0%, transparent 25%)
+            radial-gradient(ellipse at 30% 20%, rgba(139, 105, 20, 0.1) 0%, transparent 40%),
+            radial-gradient(ellipse at 70% 80%, rgba(160, 132, 92, 0.1) 0%, transparent 35%),
+            radial-gradient(ellipse at 10% 70%, rgba(115, 81, 30, 0.05) 0%, transparent 30%),
+            radial-gradient(ellipse at 90% 30%, rgba(188, 145, 107, 0.05) 0%, transparent 25%)
           `,
           backgroundSize: '200px 150px, 180px 160px, 120px 100px, 140px 120px',
           mixBlendMode: 'soft-light'

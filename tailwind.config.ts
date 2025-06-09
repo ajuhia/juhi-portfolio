@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -26,40 +25,66 @@ export default {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: '#f8fafc',
-				foreground: '#0f172a',
+				background: '#faf7f2',
+				foreground: '#3c2e26',
 				primary: {
-					DEFAULT: '#a23c3c',
+					DEFAULT: '#8b6914',
 					foreground: '#ffffff'
 				},
 				secondary: {
-					DEFAULT: '#6a9bbd',
+					DEFAULT: '#a0845c',
 					foreground: '#ffffff'
 				},
-				maroon: {
-					50: '#fef7f7',
-					100: '#fdeaea',
-					200: '#fad5d5',
-					300: '#f5b2b2',
-					400: '#ed7f7f',
-					500: '#e05555',
-					600: '#cc3c3c',
-					700: '#a23c3c',
-					800: '#8a3535',
-					900: '#753333'
+				// New beige and brown theme colors
+				'warm-beige': {
+					50: '#fefcf8',
+					100: '#fdf8ee',
+					200: '#faf0d6',
+					300: '#f6e4b8',
+					400: '#f0d494',
+					500: '#e8c16e',
+					600: '#d9a944',
+					700: '#b8893a',
+					800: '#976e35',
+					900: '#7a5931'
 				},
-				'steel-blue': {
-					50: '#f4f8fb',
-					100: '#e8f1f6',
-					200: '#d6e6ee',
-					300: '#bdd4e1',
-					400: '#9fbdd0',
-					500: '#6a9bbd',
-					600: '#5a8aaf',
-					700: '#4f7ba0',
-					800: '#456883',
-					900: '#3b576a'
+				'coffee-brown': {
+					50: '#f9f6f3',
+					100: '#f0e9e0',
+					200: '#e2d2c0',
+					300: '#d0b396',
+					400: '#bc916b',
+					500: '#a0845c',
+					600: '#8b6914',
+					700: '#73511e',
+					800: '#5e441e',
+					900: '#4d391d'
 				},
+				'cream': {
+					50: '#fffef8',
+					100: '#fffcf0',
+					200: '#fef8de',
+					300: '#fcf1c7',
+					400: '#f9e7a3',
+					500: '#f5d975',
+					600: '#efc73e',
+					700: '#d4a91f',
+					800: '#b08318',
+					900: '#8f6a1a'
+				},
+				'earth-brown': {
+					50: '#f7f4f1',
+					100: '#ebe4dc',
+					200: '#d8c7b9',
+					300: '#c2a491',
+					400: '#a8826b',
+					500: '#946752',
+					600: '#7e5545',
+					700: '#68453a',
+					800: '#563a32',
+					900: '#48322c'
+				},
+				// Keep existing slate colors for contrast
 				slate: {
 					50: '#f8fafc',
 					100: '#f1f5f9',
