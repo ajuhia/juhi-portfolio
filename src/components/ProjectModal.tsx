@@ -28,7 +28,7 @@ interface ProjectDetails {
   results: string[];
   techStack: string[];
   modelingApproach?: string;
-  toolsAndTechniques?: string;
+  toolsAndTechniques?: string | string[];
 }
 
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
@@ -38,7 +38,14 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
     "tiktok-mental-health-analysis": {
       fullDescription: "This project explores the intersection of mental health, social media, and artificial intelligence. Using a curated dataset of TikTok videos related to depression, the goal was to assess how emotional and psychological signals expressed through video, audio, and text influence viewer engagement. By leveraging the power of multimodal large language models (LLMs), the study aimed to detect mental health cues and understand the dynamics of audience interaction with emotionally charged content.",
       modelingApproach: "Engagement trends such as likes, comments, and shares were analyzed in relation to video content, user characteristics, and AI-derived emotional signals. Custom prompting strategies were developed to extract nuanced insights from multimodal data. The analysis combined traditional features with deep emotional indicators to identify patterns linked to viewer interaction and response.",
-      toolsAndTechniques: "The project combined data science with AI-powered text and emotion analysis using: Multimodal LLMs (Gemini 2.0 Flash) for structured emotion and symptom extraction, Exploratory Data Analysis and demographic profiling, Python, Pandas, Scikit-learn, Seaborn, and other python libraries. This study offers valuable insight into how platforms and creators can better understand the emotional dynamics behind mental health-related content.",
+      toolsAndTechniques: [
+        "Multimodal LLMs (Gemini 2.0 Flash) for structured emotion and symptom extraction",
+        "Exploratory Data Analysis and demographic profiling",
+        "Python, Pandas, Scikit-learn, Seaborn, and other python libraries",
+        "Statistical learning models for engagement prediction",
+        "Custom prompting strategies for emotion detection",
+        "Ethical AI practices for mental health content analysis"
+      ],
       challenges: [
         "Processing multimodal data (video, audio, text) at scale",
         "Ensuring ethical AI practices in mental health detection",
@@ -204,7 +211,18 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           {project.slug === "tiktok-mental-health-analysis" && details.toolsAndTechniques && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">Tools & Techniques</h3>
-              <p className="text-slate-700 leading-relaxed">{details.toolsAndTechniques}</p>
+              {Array.isArray(details.toolsAndTechniques) ? (
+                <ul className="space-y-2">
+                  {details.toolsAndTechniques.map((technique, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-maroon-700 mr-2">•</span>
+                      <span className="text-slate-700">{technique}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-slate-700 leading-relaxed">{details.toolsAndTechniques}</p>
+              )}
             </div>
           )}
 

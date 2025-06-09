@@ -15,7 +15,7 @@ const Projects = () => {
       tools: ["Gemini", "Python"],
       slug: "tiktok-mental-health-analysis",
       featured: true,
-      image: "/lovable-uploads/97d649d7-4b3b-49c5-91e7-a2f9483f1b23.png"
+      image: "/lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png"
     },
     {
       title: "Voice-Based Mental Wellness Assistant",
