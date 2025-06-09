@@ -22,10 +22,19 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
+interface ProjectDetails {
+  fullDescription: string;
+  challenges: string[];
+  results: string[];
+  techStack: string[];
+  modelingApproach?: string;
+  toolsAndTechniques?: string;
+}
+
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
   if (!project) return null;
 
-  const projectDetails = {
+  const projectDetails: Record<string, ProjectDetails> = {
     "tiktok-mental-health-analysis": {
       fullDescription: "This project explores the intersection of mental health, social media, and artificial intelligence. Using a curated dataset of TikTok videos related to depression, the goal was to assess how emotional and psychological signals expressed through video, audio, and text influence viewer engagement. By leveraging the power of multimodal large language models (LLMs), the study aimed to detect mental health cues and understand the dynamics of audience interaction with emotionally charged content.",
       modelingApproach: "Engagement trends such as likes, comments, and shares were analyzed in relation to video content, user characteristics, and AI-derived emotional signals. Custom prompting strategies were developed to extract nuanced insights from multimodal data. The analysis combined traditional features with deep emotional indicators to identify patterns linked to viewer interaction and response.",
@@ -58,7 +67,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         "Successfully integrated with 5+ mental health APIs",
         "Helped 500+ users in pilot program"
       ],
-      techStack: ["n8n Workflow Automation", "Google Gemini", "ElevenLabs Voice AI", "OpenAI Whisper", "Node.js", "React", "PostgreSQL"]
+      techStack: ["n8n Workflow Automation", "Google Gemini", "ElevenLabs Voice AI", "Node.js", "React", "PostgreSQL"]
     },
     "job-discovery-agent": {
       fullDescription: "An intelligent job matching and automated outreach system that analyzes resumes against job postings using advanced NLP techniques. The system automatically identifies the best job matches and facilitates recruiter outreach through integrated email automation.",
@@ -159,14 +168,22 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         </DialogHeader>
         
         <div className="space-y-6">
-          {/* Project Image */}
-          <div className="relative h-64 overflow-hidden rounded-lg">
+          {/* Project Image - Full width for TikTok project */}
+          <div className={`relative overflow-hidden rounded-lg ${
+            project.slug === "tiktok-mental-health-analysis" ? "h-auto" : "h-64"
+          }`}>
             <img 
               src={project.image} 
               alt={project.title}
-              className="w-full h-full object-cover"
+              className={`w-full ${
+                project.slug === "tiktok-mental-health-analysis" 
+                  ? "h-auto object-contain" 
+                  : "h-full object-cover"
+              }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            {project.slug !== "tiktok-mental-health-analysis" && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            )}
           </div>
 
           {/* Full Description */}
