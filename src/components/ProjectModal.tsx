@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -85,22 +86,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         "Enabled inclusive resume building for individuals with disabilities"
       ],
       techStack: ["n8n Workflow Automation", "ElevenLabs Voice AI", "GPT-4.0 API", "Custom LLM Prompt Engineering", "Voice UI Design", "DOCX/PDF Generation"]
-    },
-    "voice-mental-wellness-assistant": {
-      fullDescription: "An innovative voice-guided mental health support application that combines conversational AI with emotional intelligence. The system uses ElevenLabs for natural voice synthesis, n8n for workflow automation, and advanced NLP models to provide personalized mental wellness guidance and support.",
-      challenges: [
-        "Creating natural, empathetic voice interactions",
-        "Ensuring user privacy and data security",
-        "Integrating multiple AI services seamlessly",
-        "Providing accurate mental health guidance without replacing professional care"
-      ],
-      results: [
-        "Achieved 92% user satisfaction in beta testing",
-        "Reduced response time to under 2 seconds",
-        "Successfully integrated with 5+ mental health APIs",
-        "Helped 500+ users in pilot program"
-      ],
-      techStack: ["n8n Workflow Automation", "Google Gemini", "ElevenLabs Voice AI", "Node.js", "React", "PostgreSQL"]
     },
     "job-discovery-agent": {
       fullDescription: "An intelligent job matching and automated outreach system that analyzes resumes against job postings using advanced NLP techniques. The system automatically identifies the best job matches and facilitates recruiter outreach through integrated email automation.",
@@ -345,5 +330,3 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 };
 
 export default ProjectModal;
-
-</initial_code>
