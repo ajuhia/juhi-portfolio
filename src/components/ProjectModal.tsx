@@ -24,13 +24,13 @@ interface ProjectModalProps {
 
 interface ProjectDetails {
   fullDescription: string;
+  modelingApproach?: string;
+  keyFeatures?: string[];
+  toolsAndTechniques?: string | string[];
   challenges: string[];
   results: string[];
-  techStack: string[];
-  modelingApproach?: string;
-  toolsAndTechniques?: string | string[];
-  keyFeatures?: string[];
   impactAndUseCase?: string;
+  techStack: string[];
 }
 
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
