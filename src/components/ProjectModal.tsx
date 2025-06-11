@@ -241,7 +241,15 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Tech Stack */}
+          {/* Impact & Use Case (for Empathia project) */}
+          {project.slug === "empathia-voice-resume-builder" && details.impactAndUseCase && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Impact & Use Case</h3>
+              <p className="text-slate-700 leading-relaxed">{details.impactAndUseCase}</p>
+            </div>
+          )}
+
+              {/* Tech Stack */}
           <div>
             <h3 className="text-lg font-semibold text-maroon-700 mb-3">Technology Stack</h3>
             <div className="flex flex-wrap gap-2">
@@ -255,14 +263,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               ))}
             </div>
           </div>
-
-          {/* Impact & Use Case (for Empathia project) */}
-          {project.slug === "empathia-voice-resume-builder" && details.impactAndUseCase && (
-            <div>
-              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Impact & Use Case</h3>
-              <p className="text-slate-700 leading-relaxed">{details.impactAndUseCase}</p>
-            </div>
-          )}
 
           {/* Challenges - excluded for TikTok and Empathia projects */}
           {project.slug !== "tiktok-mental-health-analysis" && project.slug !== "empathia-voice-resume-builder" && details.challenges.length > 0 && (
