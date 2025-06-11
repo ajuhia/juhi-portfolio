@@ -26,38 +26,6 @@ const Projects = () => {
       image: "/lovable-uploads/17e6d107-cee5-4dc9-be1c-62265da9372f.png"
     },
     {
-      title: "Voice-Based Mental Wellness Assistant",
-      description: "Voice-guided mental health support tool using ElevenLabs and n8n.",
-      tools: ["n8n", "Gemini", "ElevenLabs", "Whisper"],
-      slug: "voice-mental-wellness-assistant",
-      featured: true,
-      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=500&h=300&fit=crop"
-    },
-    {
-      title: "Job Discovery Agent",
-      description: "Automated resume-job matching and recruiter outreach via Groq and LangChain.",
-      tools: ["LangChain", "Groq", "Gmail API", "Streamlit"],
-      slug: "job-discovery-agent",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop"
-    },
-    {
-      title: "Airline Visitor Forecasting Dashboard",
-      description: "Built SARIMA-based forecasting models; visualized insights in Tableau.",
-      tools: ["Python", "Tableau"],
-      slug: "airline-visitor-forecasting",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
-    },
-    {
-      title: "Prostate Cancer Survival Prediction",
-      description: "Created 7-year outcome prediction model using regression with 88% accuracy.",
-      tools: ["Python", "EDA", "Regression"],
-      slug: "prostate-cancer-survival-prediction",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop"
-    },
-    {
       title: "Airline Performance Analysis",
       description: "Benchmarked 3.65M flight records for operational performance insights.",
       tools: ["Python", "Tableau"],
@@ -66,12 +34,12 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop"
     },
     {
-      title: "Loan Default Risk Modeling",
-      description: "Risk modeling using Random Forest and Logistic Regression with 90% accuracy.",
-      tools: ["Python", "scikit-learn"],
-      slug: "loan-default-risk-modeling",
+      title: "Prostate Cancer Survival Prediction",
+      description: "Created 7-year outcome prediction model using regression with 88% accuracy.",
+      tools: ["Python", "EDA", "Regression"],
+      slug: "prostate-cancer-survival-prediction",
       featured: false,
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop"
     }
   ];
 
