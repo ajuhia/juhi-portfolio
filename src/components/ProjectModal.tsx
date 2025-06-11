@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { ExternalLink, Github, X } from 'lucide-react';
 
 interface Project {
@@ -175,21 +176,32 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         </DialogHeader>
         
         <div className="space-y-6">
-          {/* Project Image - Full width for TikTok and Empathia projects */}
-          <div className={`relative overflow-hidden rounded-lg ${
-            project.slug === "tiktok-mental-health-analysis" || project.slug === "empathia-voice-resume-builder" ? "h-auto" : "h-64"
-          }`}>
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className={`w-full ${
-                project.slug === "tiktok-mental-health-analysis" || project.slug === "empathia-voice-resume-builder"
-                  ? "h-auto object-contain" 
-                  : "h-full object-cover"
-              }`}
-            />
-            {project.slug !== "tiktok-mental-health-analysis" && project.slug !== "empathia-voice-resume-builder" && (
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          {/* Project Image - Enhanced for Empathia with proper aspect ratio control */}
+          <div className="relative overflow-hidden rounded-lg">
+            {project.slug === "empathia-voice-resume-builder" ? (
+              <AspectRatio ratio={16 / 9} className="bg-muted">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-contain rounded-lg"
+                  style={{ maxHeight: 'none' }}
+                />
+              </AspectRatio>
+            ) : project.slug === "tiktok-mental-health-analysis" ? (
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-auto object-contain"
+              />
+            ) : (
+              <div className="relative h-64">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
             )}
           </div>
 
@@ -249,7 +261,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-              {/* Tech Stack */}
+          {/* Tech Stack */}
           <div>
             <h3 className="text-lg font-semibold text-maroon-700 mb-3">Technology Stack</h3>
             <div className="flex flex-wrap gap-2">
