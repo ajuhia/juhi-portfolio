@@ -18,6 +18,14 @@ const Projects = () => {
       image: "/lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png"
     },
     {
+      title: "Empathia – Voice-First Resume Builder for Accessibility",
+      description: "Voice-driven AI assistant helping individuals with disabilities create professional resumes through accessible conversation.",
+      tools: ["n8n", "ElevenLabs", "GPT-4.0 API"],
+      slug: "empathia-voice-resume-builder",
+      featured: true,
+      image: "/lovable-uploads/17e6d107-cee5-4dc9-be1c-62265da9372f.png"
+    },
+    {
       title: "Voice-Based Mental Wellness Assistant",
       description: "Voice-guided mental health support tool using ElevenLabs and n8n.",
       tools: ["n8n", "Gemini", "ElevenLabs", "Whisper"],

@@ -29,6 +29,8 @@ interface ProjectDetails {
   techStack: string[];
   modelingApproach?: string;
   toolsAndTechniques?: string | string[];
+  keyFeatures?: string[];
+  impactAndUseCase?: string;
 }
 
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
@@ -59,6 +61,30 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         "Created ethical guidelines for mental health AI applications"
       ],
       techStack: ["Google Gemini 2.0 Flash", "Python", "Pandas", "NumPy", "Scikit-learn", "Seaborn"]
+    },
+    "empathia-voice-resume-builder": {
+      fullDescription: "Empathia is a voice-driven AI assistant designed to help individuals with disabilities create inclusive, professional resumes through a fully accessible, conversational interface. Built with accessibility-first principles, the assistant is deployed via voice-enabled interfaces and integrated with n8n for structured data collection and automated document generation.",
+      keyFeatures: [
+        "Voice-Only Interaction Flow: Developed a natural, pause-friendly conversation script optimized for screen reader and smart speaker compatibility. Each question was carefully structured to allow pacing, skipping, and easy comprehension.",
+        "Inclusive Data Collection Framework: Designed an empathetic, strengths-based flow to collect key resume data such as career goals, skills, work experience (paid and volunteer), education, accessibility needs, and additional instructions — all without requiring any medical or diagnostic disclosures.",
+        "Adaptive Resume Generation Engine: Integrated with n8n to automatically transform structured voice responses into clean, accessible resumes and cover letters in DOCX or PDF format. The resume template supports section reordering and custom additions via user-defined instructions.",
+        "Cover Letter Writer with Inclusive Voice: Built a matching cover letter generator that centers the user's skills, motivation, and workplace values — while respecting formatting conventions for automated insertion into a DOCX template.",
+        "Custom Voice Prompts & Practice Input: Created test scripts and practice speech samples for onboarding and prototyping, including examples with pauses and multiple experiences."
+      ],
+      impactAndUseCase: "Empathia makes resume-building more accessible for job seekers with cognitive, visual, or mobility challenges by replacing complex forms with a patient, guided voice interaction. It empowers users to focus on what they can do and how they contribute — not on what they need to overcome.",
+      challenges: [
+        "Creating natural, pause-friendly conversation flows",
+        "Ensuring full accessibility compliance",
+        "Designing empathetic data collection without disclosure requirements",
+        "Integrating voice processing with document generation"
+      ],
+      results: [
+        "Developed fully accessible voice-driven interface",
+        "Created strengths-based data collection framework",
+        "Automated professional document generation",
+        "Enabled inclusive resume building for individuals with disabilities"
+      ],
+      techStack: ["n8n Workflow Automation", "ElevenLabs Voice AI", "GPT-4.0 API", "Custom LLM Prompt Engineering", "Voice UI Design", "DOCX/PDF Generation"]
     },
     "voice-mental-wellness-assistant": {
       fullDescription: "An innovative voice-guided mental health support application that combines conversational AI with emotional intelligence. The system uses ElevenLabs for natural voice synthesis, n8n for workflow automation, and advanced NLP models to provide personalized mental wellness guidance and support.",
@@ -226,6 +252,21 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
+          {/* Key Features (for Empathia project) */}
+          {project.slug === "empathia-voice-resume-builder" && details.keyFeatures && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Features</h3>
+              <ul className="space-y-3">
+                {details.keyFeatures.map((feature, index) => (
+                  <li key={index} className="text-slate-700 leading-relaxed">
+                    <strong className="text-slate-900">{feature.split(':')[0]}:</strong>
+                    {feature.split(':').slice(1).join(':')}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Tech Stack */}
           <div>
             <h3 className="text-lg font-semibold text-maroon-700 mb-3">Technology Stack</h3>
@@ -240,6 +281,14 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               ))}
             </div>
           </div>
+
+          {/* Impact & Use Case (for Empathia project) */}
+          {project.slug === "empathia-voice-resume-builder" && details.impactAndUseCase && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Impact & Use Case</h3>
+              <p className="text-slate-700 leading-relaxed">{details.impactAndUseCase}</p>
+            </div>
+          )}
 
           {/* Challenges */}
           {project.slug !== "tiktok-mental-health-analysis" && (
@@ -296,3 +345,5 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 };
 
 export default ProjectModal;
+
+</initial_code>
