@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -73,18 +72,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         "Custom Voice Prompts & Practice Input: Created test scripts and practice speech samples for onboarding and prototyping, including examples with pauses and multiple experiences."
       ],
       impactAndUseCase: "Empathia makes resume-building more accessible for job seekers with cognitive, visual, or mobility challenges by replacing complex forms with a patient, guided voice interaction. It empowers users to focus on what they can do and how they contribute — not on what they need to overcome.",
-      challenges: [
-        "Creating natural, pause-friendly conversation flows",
-        "Ensuring full accessibility compliance",
-        "Designing empathetic data collection without disclosure requirements",
-        "Integrating voice processing with document generation"
-      ],
-      results: [
-        "Developed fully accessible voice-driven interface",
-        "Created strengths-based data collection framework",
-        "Automated professional document generation",
-        "Enabled inclusive resume building for individuals with disabilities"
-      ],
+      challenges: [],
+      results: [],
       techStack: ["n8n Workflow Automation", "ElevenLabs Voice AI", "GPT-4.0 API", "Custom LLM Prompt Engineering", "Voice UI Design", "DOCX/PDF Generation"]
     },
     "job-discovery-agent": {
@@ -186,20 +175,20 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         </DialogHeader>
         
         <div className="space-y-6">
-          {/* Project Image - Full width for TikTok project */}
+          {/* Project Image - Full width for TikTok and Empathia projects */}
           <div className={`relative overflow-hidden rounded-lg ${
-            project.slug === "tiktok-mental-health-analysis" ? "h-auto" : "h-64"
+            project.slug === "tiktok-mental-health-analysis" || project.slug === "empathia-voice-resume-builder" ? "h-auto" : "h-64"
           }`}>
             <img 
               src={project.image} 
               alt={project.title}
               className={`w-full ${
-                project.slug === "tiktok-mental-health-analysis" 
+                project.slug === "tiktok-mental-health-analysis" || project.slug === "empathia-voice-resume-builder"
                   ? "h-auto object-contain" 
                   : "h-full object-cover"
               }`}
             />
-            {project.slug !== "tiktok-mental-health-analysis" && (
+            {project.slug !== "tiktok-mental-health-analysis" && project.slug !== "empathia-voice-resume-builder" && (
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             )}
           </div>
@@ -275,8 +264,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Challenges */}
-          {project.slug !== "tiktok-mental-health-analysis" && (
+          {/* Challenges - excluded for TikTok and Empathia projects */}
+          {project.slug !== "tiktok-mental-health-analysis" && project.slug !== "empathia-voice-resume-builder" && details.challenges.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Challenges</h3>
               <ul className="space-y-2">
@@ -290,8 +279,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Results */}
-          {project.slug !== "tiktok-mental-health-analysis" && (
+          {/* Results - excluded for TikTok and Empathia projects */}
+          {project.slug !== "tiktok-mental-health-analysis" && project.slug !== "empathia-voice-resume-builder" && details.results.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Results</h3>
               <ul className="space-y-2">
