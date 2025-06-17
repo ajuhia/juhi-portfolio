@@ -8,13 +8,13 @@ const Certifications = () => {
       title: "AWS Cloud Practitioner",
       issuer: "Amazon Web Services",
       date: "2022",
-      icon: "☁️"
+      icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
     },
     {
       title: "Data Engineering Nanodegree",
       issuer: "Udacity",
       date: "2023",
-      icon: "📚"
+      icon: "https://upload.wikimedia.org/wikipedia/commons/1/16/Udacity_logo.svg"
     },
     {
       title: "Productivity Challenge Award",
@@ -46,7 +46,17 @@ const Certifications = () => {
               className="group hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border-0 shadow-lg bg-white"
             >
               <CardHeader className="text-center pb-4">
-                <div className="text-4xl mb-4">{cert.icon}</div>
+                <div className="mb-4 flex justify-center">
+                  {cert.icon.startsWith('http') ? (
+                    <img 
+                      src={cert.icon} 
+                      alt={cert.issuer}
+                      className="h-12 w-auto object-contain"
+                    />
+                  ) : (
+                    <div className="text-4xl">{cert.icon}</div>
+                  )}
+                </div>
                 <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-maroon-700 transition-colors duration-300 font-poppins">
                   {cert.title}
                 </CardTitle>

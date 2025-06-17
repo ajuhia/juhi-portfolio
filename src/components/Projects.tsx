@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -31,7 +32,7 @@ const Projects = () => {
       tools: ["Python", "Tableau"],
       slug: "airline-performance-analysis",
       featured: false,
-      image: "/lovable-uploads/31cea44b-a4f3-470c-9345-d6ee84dceb55.png"
+      image: "/lovable-uploads/e132e6dc-7610-4d84-a49f-36fa35ca6a9c.png"
     },
     {
       title: "Prostate Cancer Survival Prediction",
