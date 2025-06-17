@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -208,8 +207,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 <ul className="space-y-2">
                   {details.toolsAndTechniques.map((technique, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-maroon-700 mr-2">•</span>
-                      <span className="text-slate-700">{technique}</span>
+                      <span className="text-maroon-700 mr-3 font-bold text-lg leading-6">●</span>
+                      <span className="text-slate-700 leading-relaxed">{technique}</span>
                     </li>
                   ))}
                 </ul>
@@ -219,24 +218,24 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Key Features - Now consistent across all projects */}
+          {/* Key Features - Consistently formatted across all projects */}
           {details.keyFeatures && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Features</h3>
               <ul className="space-y-3">
                 {details.keyFeatures.map((feature, index) => (
-                  <li key={index} className="text-slate-700 leading-relaxed">
-                    {project.slug === "empathia-voice-resume-builder" && feature.includes(':') ? (
-                      <>
-                        <strong className="text-slate-900">{feature.split(':')[0]}:</strong>
-                        {feature.split(':').slice(1).join(':')}
-                      </>
-                    ) : (
-                      <div className="flex items-start">
-                        <span className="text-maroon-700 mr-2">•</span>
-                        <span>{feature}</span>
-                      </div>
-                    )}
+                  <li key={index} className="flex items-start text-slate-700 leading-relaxed">
+                    <span className="text-maroon-700 mr-3 font-bold text-lg leading-6">●</span>
+                    <span>
+                      {feature.includes(':') ? (
+                        <>
+                          <strong className="text-slate-900 font-semibold">{feature.split(':')[0]}:</strong>
+                          {feature.split(':').slice(1).join(':')}
+                        </>
+                      ) : (
+                        feature
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>
