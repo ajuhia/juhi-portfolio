@@ -36,11 +36,11 @@ const Projects = () => {
     },
     {
       title: "Prostate Cancer Survival Prediction",
-      description: "Created 7-year outcome prediction model using regression with 88% accuracy.",
-      tools: ["Python", "EDA", "Regression"],
+      description: "Identified key clinical predictors of 7-year survival using statistical analysis and survival modeling on 10K+ patient records.",
+      tools: ["Python", "Health Analytics", "Survival Analysis"],
       slug: "prostate-cancer-survival-prediction",
       featured: false,
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop"
+      image: "/lovable-uploads/3ff828c3-77d7-4f99-98c6-039d611807e8.png"
     }
   ];
 

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -104,20 +105,21 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       dashboardLink: "https://public.tableau.com/app/profile/juhi.anand/viz/Alaskaon-timeperformance/Story1"
     },
     "prostate-cancer-survival-prediction": {
-      fullDescription: "A machine learning model designed to predict 7-year survival outcomes for prostate cancer patients. The system uses advanced regression techniques and comprehensive patient data analysis to provide accurate prognosis predictions for medical professionals.",
-      challenges: [
-        "Handling sensitive medical data with strict privacy requirements",
-        "Dealing with imbalanced datasets",
-        "Ensuring model interpretability for medical use",
-        "Validating results with medical professionals"
+      fullDescription: "This project focused on understanding which clinical and demographic variables are most strongly associated with 7-year survival outcomes in prostate cancer patients. Using real-world health data, the goal was to support early identification of high-risk patients and inform treatment decisions through data-driven insights.",
+      subtitle: "Identifying key clinical factors that influence long-term survival in prostate cancer patients",
+      overview: "This project focused on understanding which clinical and demographic variables are most strongly associated with 7-year survival outcomes in prostate cancer patients. Using real-world health data, the goal was to support early identification of high-risk patients and inform treatment decisions through data-driven insights.",
+      approach: "Multiple screening methods were used to filter and refine over 10,000 patient records. Variables were prioritized based on relevance to survival, drawing from clinical context and domain-informed groupings. Instead of exposing all details of the modeling process, the project emphasized structured evaluation of risk factors. Transformed features—such as age groups, BMI, cancer stage, and symptom clusters—were used to assess survival outcomes using statistical modeling and survival analysis techniques.",
+      keyFeatures: [
+        "Explored two screening approaches to evaluate variable relevance and preserve key clinical features",
+        "Performed feature transformation on BMI, age, Gleason scores, tumor growth, PSA levels, and metastasis stages",
+        "Identified statistically significant associations between symptoms, therapies, and 7-year survival",
+        "Applied survival analysis to quantify the impact of clinical and demographic factors on patient outcomes",
+        "Used structured clinical data to support interpretation of high-risk indicators in prostate cancer progression"
       ],
-      results: [
-        "Achieved 88% prediction accuracy",
-        "Analyzed data from 5,000+ patients",
-        "Reduced prediction time from days to minutes",
-        "Validated by oncology experts"
-      ],
-      techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebooks"]
+      impactAndUseCase: "The project revealed how specific factors — such as age range, tumor progression, and selected therapies — influence the likelihood of long-term survival. These insights contribute to a better understanding of risk stratification in prostate cancer and demonstrate how health data can guide more informed clinical decision-making.",
+      challenges: [],
+      results: [],
+      techStack: ["Python (pandas, seaborn, scikit-learn, lifelines)", "Health Data Analytics", "Survival Analysis", "Statistical Modeling"]
     }
   };
 
@@ -183,7 +185,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           </div>
 
           {/* Approach */}
-          {(project.slug === "empathia-voice-resume-builder" || project.slug === "airline-performance-analysis") && details.approach && (
+          {details.approach && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">Approach</h3>
               <p className="text-slate-700 leading-relaxed">{details.approach}</p>
@@ -217,14 +219,14 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Key Features */}
+          {/* Key Features - Now consistent across all projects */}
           {details.keyFeatures && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Features</h3>
               <ul className="space-y-3">
                 {details.keyFeatures.map((feature, index) => (
                   <li key={index} className="text-slate-700 leading-relaxed">
-                    {project.slug === "empathia-voice-resume-builder" ? (
+                    {project.slug === "empathia-voice-resume-builder" && feature.includes(':') ? (
                       <>
                         <strong className="text-slate-900">{feature.split(':')[0]}:</strong>
                         {feature.split(':').slice(1).join(':')}
@@ -245,7 +247,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           {details.impactAndUseCase && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">
-                {project.slug === "airline-performance-analysis" ? "Impact / Outcome" : "Impact & Use Case"}
+                {project.slug === "airline-performance-analysis" || project.slug === "prostate-cancer-survival-prediction" ? "Impact / Outcome" : "Impact & Use Case"}
               </h3>
               <p className="text-slate-700 leading-relaxed">{details.impactAndUseCase}</p>
             </div>
@@ -267,36 +269,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               ))}
             </div>
           </div>
-
-          {/* Challenges - excluded for TikTok and Empathia projects */}
-          {project.slug !== "tiktok-mental-health-analysis" && project.slug !== "empathia-voice-resume-builder" && details.challenges.length > 0 && (
-            <div>
-              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Challenges</h3>
-              <ul className="space-y-2">
-                {details.challenges.map((challenge, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-maroon-700 mr-2">•</span>
-                    <span className="text-slate-700">{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Results - excluded for TikTok and Empathia projects */}
-          {project.slug !== "tiktok-mental-health-analysis" && project.slug !== "empathia-voice-resume-builder" && details.results.length > 0 && (
-            <div>
-              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Results</h3>
-              <ul className="space-y-2">
-                {details.results.map((result, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-steel-blue-600 mr-2">✓</span>
-                    <span className="text-slate-700">{result}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4 border-t">
