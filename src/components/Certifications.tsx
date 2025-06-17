@@ -47,11 +47,15 @@ const Certifications = () => {
             >
               <CardHeader className="text-center pb-4">
                 <div className="mb-4 flex justify-center">
-                  {cert.icon.startsWith('http') ? (
+                  {cert.icon.startsWith('http') || cert.icon.startsWith('/') ? (
                     <img 
                       src={cert.icon} 
                       alt={cert.issuer}
-                      className="h-12 w-auto object-contain"
+                      className="h-12 w-12 object-contain"
+                      onError={(e) => {
+                        console.log(`Failed to load image: ${cert.icon}`);
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   ) : (
                     <div className="text-4xl">{cert.icon}</div>
