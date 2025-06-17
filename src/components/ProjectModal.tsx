@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -25,6 +26,7 @@ interface ProjectModalProps {
 
 interface ProjectDetails {
   fullDescription: string;
+  subtitle?: string;
   modelingApproach?: string;
   keyFeatures?: string[];
   toolsAndTechniques?: string | string[];
@@ -32,6 +34,9 @@ interface ProjectDetails {
   results: string[];
   impactAndUseCase?: string;
   techStack: string[];
+  dashboardLink?: string;
+  overview?: string;
+  approach?: string;
 }
 
 const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
@@ -64,50 +69,50 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       techStack: ["Google Gemini 2.0 Flash", "Python", "Pandas", "NumPy", "Scikit-learn", "Seaborn"]
     },
     "empathia-voice-resume-builder": {
-      fullDescription: "Empathia is a voice-driven AI assistant designed to help individuals with disabilities create inclusive, professional resumes through a fully accessible, conversational interface. Built with accessibility-first principles, the assistant is deployed via voice-enabled interfaces and integrated with n8n for structured data collection and automated document generation.",
+      fullDescription: "Empathia is an AI-powered job application assistant designed to support individuals — especially those with accessibility needs — in building professional resumes and cover letters through natural voice interaction. The assistant guides users through a structured, spoken dialogue and transforms their responses into job-ready documents without the need for manual typing or formatting.",
+      subtitle: "Enabling inclusive, voice-driven resume and cover letter generation through conversational AI",
+      overview: "Empathia is an AI-powered job application assistant designed to support individuals — especially those with accessibility needs — in building professional resumes and cover letters through natural voice interaction. The assistant guides users through a structured, spoken dialogue and transforms their responses into job-ready documents without the need for manual typing or formatting.",
+      approach: "This project was built with a modular, voice-first design philosophy. It leverages conversational AI, automation workflows, and large language models to streamline the resume and cover letter creation process. The focus was on delivering a seamless, inclusive experience for users who benefit from voice-enabled tools and accessible document generation.",
       keyFeatures: [
-        "Voice-Only Interaction Flow: Developed a natural, pause-friendly conversation script optimized for screen reader and smart speaker compatibility. Each question was carefully structured to allow pacing, skipping, and easy comprehension.",
-        "Inclusive Data Collection Framework: Designed an empathetic, strengths-based flow to collect key resume data such as career goals, skills, work experience , education, accessibility needs, and additional instructions — all without requiring any medical or diagnostic disclosures.",
-        "Adaptive Resume Generation Engine: Integrated with n8n to automatically transform structured voice responses into clean, accessible resumes and cover letters in TXT format. The resume template supports section reordering and custom additions via user-defined instructions.",
-        "Cover Letter Writer with Inclusive Voice: Built a matching cover letter generator that centers the user's skills, motivation, and workplace values — while respecting formatting conventions for automated insertion into a TXT template.",
-        "Custom Voice Prompts & Practice Input: Created test scripts and practice speech samples for onboarding and prototyping, including examples with pauses and multiple experiences."
+        "Voice-Based Interaction: Users speak their answers through a friendly conversational flow",
+        "Automated Document Generation: Produces tailored resumes and cover letters from user input",
+        "Inclusive Accessibility Focus: Designed with cognitive, visual, and motor accessibility in mind",
+        "Multi-Agent System: Orchestrates document creation using specialized AI components",
+        "Output Delivery: Final documents are formatted and sent to the user for immediate use"
       ],
       impactAndUseCase: "Empathia makes resume-building more accessible for job seekers with cognitive, visual, or mobility challenges by replacing complex forms with a patient, guided voice interaction. It empowers users to focus on what they can do and how they contribute — not on what they need to overcome.",
       challenges: [],
       results: [],
-      techStack: ["n8n Workflow Automation", "ElevenLabs Voice AI", "GPT-4.0 API", "Custom LLM Prompt Engineering", "Voice UI Design", "DOCX/PDF Generation"]
+      techStack: ["n8n Workflow Automation", "ElevenLabs Voice AI", "GPT-4.0 API", "Custom LLM Prompt Engineering", "Voice UI Design", "DOC Generation"]
     },
-    "job-discovery-agent": {
-      fullDescription: "An intelligent job matching and automated outreach system that analyzes resumes against job postings using advanced NLP techniques. The system automatically identifies the best job matches and facilitates recruiter outreach through integrated email automation.",
+    "airline-performance-analysis": {
+      fullDescription: "Delays and cancellations are among the most disruptive aspects of air travel — but what if we could understand *where* and *why* they occur? This dashboard analyzes one year of Alaska Airlines' flight performance data to uncover hidden patterns in delays and cancellations. Presented as an interactive Tableau Story, it provides a clear, narrative-driven view of operational performance, helping both airline stakeholders and travelers gain actionable insight.",
+      subtitle: "Uncovering delay and cancellation patterns from over 1 million flight records",
+      overview: "Delays and cancellations are among the most disruptive aspects of air travel — but what if we could understand *where* and *why* they occur? This dashboard analyzes one year of Alaska Airlines' flight performance data to uncover hidden patterns in delays and cancellations. Presented as an interactive Tableau Story, it provides a clear, narrative-driven view of operational performance, helping both airline stakeholders and travelers gain actionable insight.",
+      approach: "I worked with a dataset of over **1 million flight records**, cleaning and preprocessing it using **Python** to ensure consistency and accuracy. Using **Tableau**, I designed a multi-step Story that presents flight performance trends, delay causes, and monthly variations in a structured, visual format. Each page builds on the previous to guide users through Alaska Airlines' operational metrics in a clear, digestible way.",
+      keyFeatures: [
+        "Performance Summary: Total flights, on-time arrivals, delays, and cancellations",
+        "Monthly Trends: Visualization of Alaska Airlines' performance across the calendar year",
+        "Delay Cause Breakdown: Categorization of delays (carrier, weather, NAS, security, late aircraft)",
+        "Cancellations Overview: Month-wise analysis of cancellation rates",
+        "Competitor Comparison: Alaska benchmarked against other airlines at key origin airports",
+        "Narrative-Driven Insights: Structured Tableau Story with guided, non-filtered exploration"
+      ],
+      impactAndUseCase: "The final dashboard offers a data-backed view of Alaska Airlines' reliability over time. It helps identify operational bottlenecks, benchmark against competitors, and inform improvement strategies. By combining large-scale data processing in Python with Tableau's storytelling capabilities, this project transforms raw flight data into a tool for strategic decision-making.",
       challenges: [
-        "Accurate resume-job matching algorithms",
-        "Scaling email automation without spam issues",
-        "Managing rate limits across multiple APIs",
-        "Ensuring personalized outreach messages"
+        "Processing massive datasets efficiently",
+        "Identifying meaningful performance patterns",
+        "Creating scalable visualization solutions",
+        "Ensuring data quality across multiple sources"
       ],
       results: [
-        "Improved job matching accuracy by 65%",
-        "Automated outreach to 1000+ recruiters",
-        "Achieved 23% response rate from recruiters",
-        "Reduced job search time by 40% for users"
+        "Processed 1M+ flight records successfully",
+        "Identified key performance bottlenecks",
+        "Created automated reporting system",
+        "Improved on-time performance insights"
       ],
-      techStack: ["LangChain", "Groq API", "Gmail API", "Streamlit", "Python", "OpenAI GPT", "BeautifulSoup"]
-    },
-    "airline-visitor-forecasting": {
-      fullDescription: "A comprehensive forecasting dashboard that predicts airline visitor patterns using SARIMA (Seasonal AutoRegressive Integrated Moving Average) models. The system processes historical flight data to generate accurate forecasts and presents insights through interactive Tableau visualizations.",
-      challenges: [
-        "Handling seasonal variations in airline data",
-        "Managing large datasets with multiple time series",
-        "Creating intuitive visualizations for stakeholders",
-        "Ensuring model accuracy across different routes"
-      ],
-      results: [
-        "Achieved 88% forecasting accuracy",
-        "Processed 5+ years of historical data",
-        "Created 15+ interactive dashboard views",
-        "Helped airlines optimize capacity planning"
-      ],
-      techStack: ["Python", "Pandas", "Statsmodels", "Tableau", "NumPy", "Matplotlib", "Jupyter Notebooks"]
+      techStack: ["Python", "Tableau"],
+      dashboardLink: "https://public.tableau.com/app/profile/juhi.anand/viz/Alaskaon-timeperformance/Story1"
     },
     "prostate-cancer-survival-prediction": {
       fullDescription: "A machine learning model designed to predict 7-year survival outcomes for prostate cancer patients. The system uses advanced regression techniques and comprehensive patient data analysis to provide accurate prognosis predictions for medical professionals.",
@@ -124,38 +129,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         "Validated by oncology experts"
       ],
       techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebooks"]
-    },
-    "airline-performance-analysis": {
-      fullDescription: "A comprehensive analysis of airline operational performance using 3.65 million flight records. The project benchmarks various performance metrics and provides actionable insights for operational improvements through advanced data visualization and statistical analysis.",
-      challenges: [
-        "Processing massive datasets efficiently",
-        "Identifying meaningful performance patterns",
-        "Creating scalable visualization solutions",
-        "Ensuring data quality across multiple sources"
-      ],
-      results: [
-        "Processed 3.65M flight records successfully",
-        "Identified 12 key performance bottlenecks",
-        "Created automated reporting system",
-        "Improved on-time performance insights by 35%"
-      ],
-      techStack: ["Python", "Pandas", "Tableau", "SQL", "NumPy", "Matplotlib", "Apache Spark"]
-    },
-    "loan-default-risk-modeling": {
-      fullDescription: "A sophisticated risk assessment model that predicts loan default probability using ensemble methods including Random Forest and Logistic Regression. The system analyzes borrower characteristics and financial history to provide accurate risk assessments for lending decisions.",
-      challenges: [
-        "Handling imbalanced datasets with few defaults",
-        "Feature engineering from financial data",
-        "Ensuring regulatory compliance",
-        "Balancing model accuracy with interpretability"
-      ],
-      results: [
-        "Achieved 90% prediction accuracy",
-        "Reduced false positive rate by 25%",
-        "Processed 100,000+ loan applications",
-        "Improved risk assessment speed by 80%"
-      ],
-      techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "XGBoost", "Matplotlib", "Seaborn"]
     }
   };
 
@@ -171,8 +144,13 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-slate-900 font-poppins mb-4">
-            {project.title}
+            {project.slug === "empathia-voice-resume-builder" ? "Empathia – AI-Powered Job Application Assistant" : 
+             project.slug === "airline-performance-analysis" ? "Alaska Airlines – On-Time Performance Dashboard" :
+             project.title}
           </DialogTitle>
+          {details.subtitle && (
+            <p className="text-lg text-slate-600 mb-4">{details.subtitle}</p>
+          )}
         </DialogHeader>
         
         <div className="space-y-6">
@@ -205,11 +183,23 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             )}
           </div>
 
-          {/* Full Description */}
+          {/* Project Overview */}
           <div>
-            <h3 className="text-lg font-semibold text-maroon-700 mb-3">Overview</h3>
-            <p className="text-slate-700 leading-relaxed">{details.fullDescription}</p>
+            <h3 className="text-lg font-semibold text-maroon-700 mb-3">
+              {project.slug === "empathia-voice-resume-builder" ? "Project Overview" : "Overview"}
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              {details.overview || details.fullDescription}
+            </p>
           </div>
+
+          {/* Approach */}
+          {(project.slug === "empathia-voice-resume-builder" || project.slug === "airline-performance-analysis") && details.approach && (
+            <div>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Approach</h3>
+              <p className="text-slate-700 leading-relaxed">{details.approach}</p>
+            </div>
+          )}
 
           {/* Modeling Approach (for TikTok project) */}
           {project.slug === "tiktok-mental-health-analysis" && details.modelingApproach && (
@@ -238,32 +228,45 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           )}
 
-          {/* Key Features (for Empathia project) */}
-          {project.slug === "empathia-voice-resume-builder" && details.keyFeatures && (
+          {/* Key Features */}
+          {details.keyFeatures && (
             <div>
               <h3 className="text-lg font-semibold text-maroon-700 mb-3">Key Features</h3>
               <ul className="space-y-3">
                 {details.keyFeatures.map((feature, index) => (
                   <li key={index} className="text-slate-700 leading-relaxed">
-                    <strong className="text-slate-900">{feature.split(':')[0]}:</strong>
-                    {feature.split(':').slice(1).join(':')}
+                    {project.slug === "empathia-voice-resume-builder" ? (
+                      <>
+                        <strong className="text-slate-900">{feature.split(':')[0]}:</strong>
+                        {feature.split(':').slice(1).join(':')}
+                      </>
+                    ) : (
+                      <div className="flex items-start">
+                        <span className="text-maroon-700 mr-2">•</span>
+                        <span>{feature}</span>
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
-          {/* Impact & Use Case (for Empathia project) */}
-          {project.slug === "empathia-voice-resume-builder" && details.impactAndUseCase && (
+          {/* Impact & Use Case */}
+          {details.impactAndUseCase && (
             <div>
-              <h3 className="text-lg font-semibold text-maroon-700 mb-3">Impact & Use Case</h3>
+              <h3 className="text-lg font-semibold text-maroon-700 mb-3">
+                {project.slug === "airline-performance-analysis" ? "Impact / Outcome" : "Impact & Use Case"}
+              </h3>
               <p className="text-slate-700 leading-relaxed">{details.impactAndUseCase}</p>
             </div>
           )}
 
           {/* Tech Stack */}
           <div>
-            <h3 className="text-lg font-semibold text-maroon-700 mb-3">Technology Stack</h3>
+            <h3 className="text-lg font-semibold text-maroon-700 mb-3">
+              {project.slug === "empathia-voice-resume-builder" ? "Technology Stack" : "Tech Stack"}
+            </h3>
             <div className="flex flex-wrap gap-2">
               {details.techStack.map((tech, index) => (
                 <span 
@@ -308,13 +311,23 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4 border-t">
-            <Button 
-              className="flex-1 bg-maroon-700 hover:bg-maroon-800 text-white"
-              onClick={() => console.log(`View live project: ${project.slug}`)}
-            >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              View Live Project
-            </Button>
+            {project.slug === "airline-performance-analysis" && details.dashboardLink ? (
+              <Button 
+                className="flex-1 bg-maroon-700 hover:bg-maroon-800 text-white"
+                onClick={() => window.open(details.dashboardLink, '_blank')}
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                View Dashboard
+              </Button>
+            ) : (
+              <Button 
+                className="flex-1 bg-maroon-700 hover:bg-maroon-800 text-white"
+                onClick={() => console.log(`View live project: ${project.slug}`)}
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                View Live Project
+              </Button>
+            )}
             <Button 
               variant="outline"
               className="border-steel-blue-600 text-steel-blue-600 hover:bg-steel-blue-600 hover:text-white"

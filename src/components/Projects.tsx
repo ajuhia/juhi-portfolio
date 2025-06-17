@@ -18,8 +18,8 @@ const Projects = () => {
       image: "/lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png"
     },
     {
-      title: "Empathia – Voice-First Resume Builder for Accessibility",
-      description: "Voice-driven AI assistant helping individuals with disabilities create professional resumes through accessible conversation.",
+      title: "Empathia – AI-Powered Job Application Assistant",
+      description: "Enabling inclusive, voice-driven resume and cover letter generation through conversational AI.",
       tools: ["n8n", "ElevenLabs", "GPT-4.0 API"],
       slug: "empathia-voice-resume-builder",
       featured: true,
@@ -27,11 +27,11 @@ const Projects = () => {
     },
     {
       title: "Airline Performance Analysis",
-      description: "Benchmarked 3.65M flight records for operational performance insights.",
+      description: "Analyzed 1M+ Alaska Airlines flights to uncover delay and cancellation trends.",
       tools: ["Python", "Tableau"],
       slug: "airline-performance-analysis",
       featured: false,
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop"
+      image: "/lovable-uploads/31cea44b-a4f3-470c-9345-d6ee84dceb55.png"
     },
     {
       title: "Prostate Cancer Survival Prediction",
@@ -128,14 +128,7 @@ const Projects = () => {
                       onClick={() => handleViewProject(project)}
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      View Project
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      size="icon"
-                      className="border-slate-200 text-slate-600 hover:bg-slate-600 hover:text-white transition-all duration-300 rounded-lg"
-                    >
-                      <Github className="h-4 w-4" />
+                      Learn More
                     </Button>
                   </div>
                 </CardContent>
