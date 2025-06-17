@@ -14,7 +14,7 @@ const Certifications = () => {
       title: "Data Engineering Nanodegree",
       issuer: "Udacity",
       date: "2023",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/1/16/Udacity_logo.svg"
+      icon: "/lovable-uploads/846e3336-656b-4181-8a16-f5500d905110.png"
     },
     {
       title: "Productivity Challenge Award",

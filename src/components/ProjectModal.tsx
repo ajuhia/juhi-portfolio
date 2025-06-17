@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -99,18 +98,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         "Narrative-Driven Insights: Structured Tableau Story with guided, non-filtered exploration"
       ],
       impactAndUseCase: "The final dashboard offers a data-backed view of Alaska Airlines' reliability over time. It helps identify operational bottlenecks, benchmark against competitors, and inform improvement strategies. By combining large-scale data processing in Python with Tableau's storytelling capabilities, this project transforms raw flight data into a tool for strategic decision-making.",
-      challenges: [
-        "Processing massive datasets efficiently",
-        "Identifying meaningful performance patterns",
-        "Creating scalable visualization solutions",
-        "Ensuring data quality across multiple sources"
-      ],
-      results: [
-        "Processed 1M+ flight records successfully",
-        "Identified key performance bottlenecks",
-        "Created automated reporting system",
-        "Improved on-time performance insights"
-      ],
+      challenges: [],
+      results: [],
       techStack: ["Python", "Tableau"],
       dashboardLink: "https://public.tableau.com/app/profile/juhi.anand/viz/Alaskaon-timeperformance/Story1"
     },
