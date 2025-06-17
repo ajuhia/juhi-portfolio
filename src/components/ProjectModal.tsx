@@ -207,7 +207,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 <ul className="space-y-2">
                   {details.toolsAndTechniques.map((technique, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-maroon-700 mr-3 font-bold text-lg leading-6">●</span>
+                      <span className="text-maroon-700 mr-3 font-bold text-lg leading-6">•</span>
                       <span className="text-slate-700 leading-relaxed">{technique}</span>
                     </li>
                   ))}
@@ -225,7 +225,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               <ul className="space-y-3">
                 {details.keyFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start text-slate-700 leading-relaxed">
-                    <span className="text-maroon-700 mr-3 font-bold text-lg leading-6">●</span>
+                    <span className="text-maroon-700 mr-3 font-bold text-lg leading-6">•</span>
                     <span>
                       {feature.includes(':') ? (
                         <>
