@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Skills = () => {
@@ -165,71 +164,6 @@ const Skills = () => {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .masonry-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 1.5rem;
-          align-items: start;
-        }
-
-        @media (min-width: 768px) {
-          .masonry-grid {
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .masonry-grid {
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          }
-        }
-
-        .masonry-item {
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-
-        .masonry-small {
-          grid-row-end: span 20;
-        }
-
-        .masonry-medium {
-          grid-row-end: span 25;
-        }
-
-        .masonry-large {
-          grid-row-end: span 30;
-        }
-
-        .masonry-xl {
-          grid-row-end: span 35;
-        }
-
-        @media (max-width: 767px) {
-          .masonry-small,
-          .masonry-medium,
-          .masonry-large,
-          .masonry-xl {
-            grid-row-end: auto;
-          }
-        }
-
-        .animate-fade-in {
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };
