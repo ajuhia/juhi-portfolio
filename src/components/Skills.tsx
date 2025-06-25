@@ -1,48 +1,113 @@
 
 import React from 'react';
+import { 
+  Database, 
+  Cloud, 
+  Code, 
+  Bot, 
+  BarChart3, 
+  Wrench, 
+  Settings,
+  Python,
+  Git,
+  Github,
+  Mysql,
+  Postgresql,
+  Docker,
+  Aws,
+  CircleDot,
+  Jenkins,
+  Jira,
+  Youtube
+} from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Programming Languages",
-      items: ["Python", "R", "SQL", "Bash"],
-      icon: "💻",
+      category: "Programming",
+      items: [
+        { name: "Python", icon: Python },
+        { name: "R", icon: Code },
+        { name: "SQL", icon: Database },
+        { name: "Bash", icon: Code }
+      ],
       color: "maroon"
     },
     {
-      category: "Databases",
-      items: ["PostgreSQL", "MySQL", "TimescaleDB", "DynamoDB", "OpenTSDB"],
-      icon: "🗄️",
+      category: "AI Tools",
+      items: [
+        { name: "GPT 4.0", icon: Bot },
+        { name: "Gemini 2.0 (Google AI)", icon: Bot },
+        { name: "LangChain", icon: Bot },
+        { name: "ElevenLabs", icon: Bot },
+        { name: "Groq", icon: Bot },
+        { name: "Hugging Face Transformers", icon: Bot },
+        { name: "Loveable", icon: Bot },
+        { name: "n8n", icon: Settings },
+        { name: "Prompt Engineering", icon: Bot }
+      ],
+      color: "steel-blue"
+    },
+    {
+      category: "Data Science Tools",
+      items: [
+        { name: "ETL Scripting", icon: BarChart3 },
+        { name: "NumPy", icon: BarChart3 },
+        { name: "Pandas", icon: BarChart3 },
+        { name: "Scikit-learn", icon: BarChart3 },
+        { name: "Matplotlib", icon: BarChart3 },
+        { name: "Seaborn", icon: BarChart3 },
+        { name: "Beautiful Soup", icon: Code },
+        { name: "Weights & Biases", icon: BarChart3 },
+        { name: "MS Excel", icon: BarChart3 },
+        { name: "Tableau", icon: BarChart3 },
+        { name: "SSAS", icon: Database },
+        { name: "SSRS", icon: BarChart3 }
+      ],
+      color: "maroon"
+    },
+    {
+      category: "Data Engineering Tools",
+      items: [
+        { name: "Apache Airflow", icon: Settings },
+        { name: "Hive", icon: Database },
+        { name: "HBase", icon: Database },
+        { name: "Zookeeper", icon: Settings },
+        { name: "Oozie", icon: Settings },
+        { name: "SSIS", icon: Database }
+      ],
       color: "steel-blue"
     },
     {
       category: "Cloud & DevOps",
-      items: ["AWS (Kinesis, Glue, Lambda, S3, Redshift, IoT, CloudWatch)", "Docker", "Jenkins", "CircleCI"],
-      icon: "☁️",
+      items: [
+        { name: "Amazon Web Services (AWS)", icon: Aws },
+        { name: "Docker", icon: Docker },
+        { name: "CircleCI", icon: CircleDot },
+        { name: "Jenkins", icon: Jenkins },
+        { name: "Grafana", icon: BarChart3 }
+      ],
       color: "maroon"
     },
     {
-      category: "Data Engineering",
-      items: ["Apache Airflow", "Hive", "HBase", "Oozie", "Zookeeper", "SSIS", "SSAS", "SSRS", "ETL Scripting"],
-      icon: "⚡",
+      category: "Databases",
+      items: [
+        { name: "MySQL", icon: Mysql },
+        { name: "PostgreSQL", icon: Postgresql },
+        { name: "TimescaleDB", icon: Database },
+        { name: "OpenTSDB", icon: Database }
+      ],
       color: "steel-blue"
     },
     {
-      category: "Analytics & Machine Learning",
-      items: ["NLP", "Predictive Modeling", "Time-Series Forecasting", "Regression Modeling", "MLOps", "Data Visualization", "Tableau", "Excel", "Scikit-learn", "Weights & Biases"],
-      icon: "🔍",
-      color: "maroon"
-    },
-    {
-      category: "AI & Automation Tools",
-      items: ["LangChain", "Gemini (Google AI)", "Groq", "Hugging Face Transformers", "ElevenLabs", "n8n", "Streamlit", "Lovable AI"],
-      icon: "🤖",
-      color: "steel-blue"
-    },
-    {
-      category: "Collaboration & Utilities",
-      items: ["GitHub", "JIRA", "Perforce", "SoapUI"],
-      icon: "🛠️",
+      category: "Other Tools",
+      items: [
+        { name: "Git", icon: Git },
+        { name: "GitHub", icon: Github },
+        { name: "JIRA", icon: Jira },
+        { name: "SoapUI", icon: Wrench },
+        { name: "Postman", icon: Wrench }
+      ],
       color: "maroon"
     }
   ];
@@ -65,56 +130,51 @@ const Skills = () => {
               className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Background gradients moved inside each card */}
+              {/* Background gradients */}
               <div className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl">
                 <div className={`absolute inset-0 bg-gradient-to-br ${
                   skillGroup.color === 'maroon' 
                     ? 'from-maroon-100/60 via-transparent to-maroon-50/40' 
                     : 'from-steel-blue-100/60 via-transparent to-steel-blue-50/40'
                 } rounded-2xl`}></div>
-                <div className={`absolute inset-0 bg-gradient-to-tr ${
-                  skillGroup.color === 'maroon' 
-                    ? 'from-transparent via-maroon-50/30 to-transparent' 
-                    : 'from-transparent via-steel-blue-50/30 to-transparent'
-                } rounded-2xl`}></div>
-                <div className="absolute top-2 left-2 w-16 h-16 bg-gradient-to-br from-maroon-200/40 via-maroon-300/20 to-transparent rounded-full blur-xl animate-float opacity-60"></div>
-                <div className="absolute bottom-2 right-2 w-20 h-20 bg-gradient-to-br from-steel-blue-200/40 via-steel-blue-300/20 to-transparent rounded-full blur-xl animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
               </div>
 
-              {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl ${
-                skillGroup.color === 'maroon' 
-                  ? 'bg-gradient-to-br from-maroon-500 to-maroon-700' 
-                  : 'bg-gradient-to-br from-steel-blue-500 to-steel-blue-700'
-              }`}></div>
-              
+              {/* Category Header */}
               <div className="text-center mb-6 relative z-10">
-                <span className="text-4xl block mb-4 group-hover:scale-110 transition-transform duration-300">{skillGroup.icon}</span>
-                <h3 className={`text-xl font-bold font-poppins ${
+                <h3 className={`text-xl font-bold font-poppins mb-4 ${
                   skillGroup.color === 'maroon' ? 'text-maroon-700' : 'text-steel-blue-600'
                 } group-hover:text-opacity-90 transition-colors duration-300`}>
                   {skillGroup.category}
                 </h3>
-                <div className={`w-12 h-1 mx-auto mt-3 rounded-full transition-all duration-300 group-hover:w-16 ${
+                <div className={`w-12 h-1 mx-auto rounded-full transition-all duration-300 group-hover:w-16 ${
                   skillGroup.color === 'maroon' 
                     ? 'bg-gradient-to-r from-maroon-700 via-maroon-500 to-maroon-300' 
                     : 'bg-gradient-to-r from-steel-blue-600 via-steel-blue-400 to-steel-blue-300'
                 }`}></div>
               </div>
               
-              <div className="flex flex-wrap gap-2 justify-center relative z-10">
-                {skillGroup.items.map((skill, skillIndex) => (
-                  <span 
-                    key={skillIndex}
-                    className={`px-3 py-1.5 rounded-full text-white font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-xs ${
-                      skillGroup.color === 'maroon' 
-                        ? 'bg-gradient-to-r from-maroon-700 via-maroon-600 to-maroon-500 hover:from-maroon-800 hover:via-maroon-700 hover:to-maroon-600' 
-                        : 'bg-gradient-to-r from-steel-blue-600 via-steel-blue-500 to-steel-blue-400 hover:from-steel-blue-700 hover:via-steel-blue-600 hover:to-steel-blue-500'
-                    }`}
-                  >
-                    {skill}
-                  </span>
-                ))}
+              {/* Skills List */}
+              <div className="space-y-3 relative z-10">
+                {skillGroup.items.map((skill, skillIndex) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div 
+                      key={skillIndex}
+                      className="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/30 transition-all duration-300 group/item"
+                    >
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                        skillGroup.color === 'maroon' 
+                          ? 'bg-maroon-100 text-maroon-700 group-hover/item:bg-maroon-200' 
+                          : 'bg-steel-blue-100 text-steel-blue-600 group-hover/item:bg-steel-blue-200'
+                      } transition-colors duration-300`}>
+                        <IconComponent className="w-4 h-4" />
+                      </div>
+                      <span className="text-slate-700 font-medium text-sm group-hover/item:text-slate-900 transition-colors duration-300">
+                        {skill.name}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}

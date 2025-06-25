@@ -4,18 +4,79 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, MapPin, Linkedin, Send } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    honeypot: '' // Anti-spam honeypot field
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    
+    // Check honeypot field (should be empty)
+    if (formData.honeypot) {
+      return; // Likely spam, silently reject
+    }
+
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    console.log('Submitting form to Formspree:', formData);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xkgwkqnq', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your message. I'll be in touch soon!",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+          honeypot: ''
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Message Failed to Send",
+        description: "Sorry, something went wrong. Please try again or email me directly at ajuhi31@gmail.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -110,9 +171,20 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="relative z-10">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field for spam protection - hidden from users */}
+                  <input
+                    type="text"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={handleChange}
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                  
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                      <label className="block text-sm font-medium text-slate-700 mb-2">Full Name *</label>
                       <Input
                         type="text"
                         name="name"
@@ -121,11 +193,12 @@ const Contact = () => {
                         onChange={handleChange}
                         className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                      <label className="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
                       <Input
                         type="email"
                         name="email"
@@ -134,12 +207,13 @@ const Contact = () => {
                         onChange={handleChange}
                         className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Message *</label>
                     <Textarea
                       name="message"
                       placeholder="Tell me about your project, ask a question, or just say hello..."
@@ -148,15 +222,26 @@ const Contact = () => {
                       rows={6}
                       className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl resize-none"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   
                   <Button 
                     type="submit"
-                    className="w-full bg-gradient-to-r from-maroon-700 to-maroon-600 hover:from-maroon-800 hover:to-maroon-700 text-white py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-xl"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-maroon-700 to-maroon-600 hover:from-maroon-800 hover:to-maroon-700 text-white py-4 text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl rounded-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    <Send className="mr-3 h-5 w-5" />
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="mr-3 h-5 w-5" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
