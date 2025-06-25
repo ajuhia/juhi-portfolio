@@ -8,17 +8,12 @@ import {
   BarChart3, 
   Wrench, 
   Settings,
-  Python,
-  Git,
+  Terminal,
+  GitBranch,
   Github,
-  Mysql,
-  Postgresql,
-  Docker,
-  Aws,
   CircleDot,
-  Jenkins,
-  Jira,
-  Youtube
+  Server,
+  Briefcase
 } from 'lucide-react';
 
 const Skills = () => {
@@ -26,10 +21,10 @@ const Skills = () => {
     {
       category: "Programming",
       items: [
-        { name: "Python", icon: Python },
-        { name: "R", icon: Code },
+        { name: "Python", icon: Code },
+        { name: "R", icon: BarChart3 },
         { name: "SQL", icon: Database },
-        { name: "Bash", icon: Code }
+        { name: "Bash", icon: Terminal }
       ],
       color: "maroon"
     },
@@ -81,10 +76,10 @@ const Skills = () => {
     {
       category: "Cloud & DevOps",
       items: [
-        { name: "Amazon Web Services (AWS)", icon: Aws },
-        { name: "Docker", icon: Docker },
+        { name: "Amazon Web Services (AWS)", icon: Cloud },
+        { name: "Docker", icon: Server },
         { name: "CircleCI", icon: CircleDot },
-        { name: "Jenkins", icon: Jenkins },
+        { name: "Jenkins", icon: Settings },
         { name: "Grafana", icon: BarChart3 }
       ],
       color: "maroon"
@@ -92,8 +87,8 @@ const Skills = () => {
     {
       category: "Databases",
       items: [
-        { name: "MySQL", icon: Mysql },
-        { name: "PostgreSQL", icon: Postgresql },
+        { name: "MySQL", icon: Database },
+        { name: "PostgreSQL", icon: Database },
         { name: "TimescaleDB", icon: Database },
         { name: "OpenTSDB", icon: Database }
       ],
@@ -102,9 +97,9 @@ const Skills = () => {
     {
       category: "Other Tools",
       items: [
-        { name: "Git", icon: Git },
+        { name: "Git", icon: GitBranch },
         { name: "GitHub", icon: Github },
-        { name: "JIRA", icon: Jira },
+        { name: "JIRA", icon: Briefcase },
         { name: "SoapUI", icon: Wrench },
         { name: "Postman", icon: Wrench }
       ],
