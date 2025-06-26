@@ -27,7 +27,7 @@ const Skills = () => {
         { name: "Bash", icon: Terminal }
       ],
       color: "maroon",
-      hoverBg: "hover:bg-red-50/50"
+      hoverBg: "hover:bg-maroon-50/80"
     },
     {
       category: "AI Tools",
@@ -43,7 +43,7 @@ const Skills = () => {
         { name: "Prompt Engineering", icon: Bot }
       ],
       color: "steel-blue",
-      hoverBg: "hover:bg-blue-50/50"
+      hoverBg: "hover:bg-steel-blue-50/80"
     },
     {
       category: "Data Science Tools",
@@ -62,7 +62,7 @@ const Skills = () => {
         { name: "SSRS", icon: BarChart3 }
       ],
       color: "maroon",
-      hoverBg: "hover:bg-pink-50/50"
+      hoverBg: "hover:bg-maroon-50/80"
     },
     {
       category: "Data Engineering Tools",
@@ -75,7 +75,7 @@ const Skills = () => {
         { name: "SSIS", icon: Database }
       ],
       color: "steel-blue",
-      hoverBg: "hover:bg-cyan-50/50"
+      hoverBg: "hover:bg-steel-blue-50/80"
     },
     {
       category: "Cloud & DevOps",
@@ -87,7 +87,7 @@ const Skills = () => {
         { name: "Grafana", icon: BarChart3 }
       ],
       color: "maroon",
-      hoverBg: "hover:bg-orange-50/50"
+      hoverBg: "hover:bg-maroon-50/80"
     },
     {
       category: "Databases",
@@ -98,7 +98,7 @@ const Skills = () => {
         { name: "OpenTSDB", icon: Database }
       ],
       color: "steel-blue",
-      hoverBg: "hover:bg-teal-50/50"
+      hoverBg: "hover:bg-steel-blue-50/80"
     },
     {
       category: "Other Tools",
@@ -110,7 +110,7 @@ const Skills = () => {
         { name: "Postman", icon: Wrench }
       ],
       color: "maroon",
-      hoverBg: "hover:bg-purple-50/50"
+      hoverBg: "hover:bg-maroon-50/80"
     }
   ];
 
@@ -130,7 +130,7 @@ const Skills = () => {
           {skillCategories.map((skillGroup, index) => (
             <div 
               key={skillGroup.category}
-              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden flex flex-col min-h-[280px]"
+              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden flex flex-col min-h-[320px]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background gradients */}
@@ -158,22 +158,22 @@ const Skills = () => {
               
               {/* Skills - Horizontal Layout with Flex Wrap */}
               <div className="flex-grow relative z-10">
-                <div className="flex flex-wrap gap-2 justify-center">
+                <div className="flex flex-wrap gap-3 justify-center text-justify">
                   {skillGroup.items.map((skill, skillIndex) => {
                     const IconComponent = skill.icon;
                     return (
                       <div 
                         key={skillIndex}
-                        className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/20`}
+                        className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/20`}
                       >
-                        <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
+                        <div className={`w-6 h-6 rounded flex items-center justify-center flex-shrink-0 ${
                           skillGroup.color === 'maroon' 
                             ? 'bg-maroon-100 text-maroon-700 group-hover/item:bg-maroon-200' 
                             : 'bg-steel-blue-100 text-steel-blue-600 group-hover/item:bg-steel-blue-200'
                         } transition-colors duration-300`}>
-                          <IconComponent className="w-3 h-3" />
+                          <IconComponent className="w-4 h-4" />
                         </div>
-                        <span className="text-slate-700 font-medium text-xs sm:text-sm group-hover/item:text-slate-900 transition-colors duration-300 whitespace-nowrap">
+                        <span className="text-slate-700 font-medium text-lg group-hover/item:text-slate-900 transition-colors duration-300 whitespace-nowrap font-poppins">
                           {skill.name}
                         </span>
                       </div>
