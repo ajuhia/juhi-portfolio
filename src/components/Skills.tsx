@@ -27,7 +27,7 @@ const Skills = () => {
         { name: "Bash", icon: Terminal }
       ],
       color: "maroon",
-      hoverBg: "hover:bg-maroon-100/60"
+      hoverBg: "hover:bg-maroon-50/80"
     },
     {
       category: "AI Tools",
@@ -43,20 +43,7 @@ const Skills = () => {
         { name: "Prompt Engineering", icon: Bot }
       ],
       color: "steel-blue",
-      hoverBg: "hover:bg-steel-blue-100/60"
-    },
-    {
-      category: "Data Engineering Tools",
-      items: [
-        { name: "Apache Airflow", icon: Settings },
-        { name: "Hive", icon: Database },
-        { name: "HBase", icon: Database },
-        { name: "Zookeeper", icon: Settings },
-        { name: "Oozie", icon: Settings },
-        { name: "SSIS", icon: Database }
-      ],
-      color: "steel-blue",
-      hoverBg: "hover:bg-steel-blue-100/60"
+      hoverBg: "hover:bg-steel-blue-50/80"
     },
     {
       category: "Data Science Tools",
@@ -75,7 +62,20 @@ const Skills = () => {
         { name: "SSRS", icon: BarChart3 }
       ],
       color: "maroon",
-      hoverBg: "hover:bg-maroon-100/60"
+      hoverBg: "hover:bg-maroon-50/80"
+    },
+    {
+      category: "Data Engineering Tools",
+      items: [
+        { name: "Apache Airflow", icon: Settings },
+        { name: "Hive", icon: Database },
+        { name: "HBase", icon: Database },
+        { name: "Zookeeper", icon: Settings },
+        { name: "Oozie", icon: Settings },
+        { name: "SSIS", icon: Database }
+      ],
+      color: "steel-blue",
+      hoverBg: "hover:bg-steel-blue-50/80"
     },
     {
       category: "Cloud & DevOps",
@@ -87,23 +87,30 @@ const Skills = () => {
         { name: "Grafana", icon: BarChart3 }
       ],
       color: "maroon",
-      hoverBg: "hover:bg-maroon-100/60"
+      hoverBg: "hover:bg-maroon-50/80"
     },
     {
-      category: "Databases & Other Tools",
+      category: "Databases",
       items: [
         { name: "MySQL", icon: Database },
         { name: "PostgreSQL", icon: Database },
         { name: "TimescaleDB", icon: Database },
-        { name: "OpenTSDB", icon: Database },
+        { name: "OpenTSDB", icon: Database }
+      ],
+      color: "steel-blue",
+      hoverBg: "hover:bg-steel-blue-50/80"
+    },
+    {
+      category: "Other Tools",
+      items: [
         { name: "Git", icon: GitBranch },
         { name: "GitHub", icon: Github },
         { name: "JIRA", icon: Briefcase },
         { name: "SoapUI", icon: Wrench },
         { name: "Postman", icon: Wrench }
       ],
-      color: "steel-blue",
-      hoverBg: "hover:bg-steel-blue-100/60"
+      color: "maroon",
+      hoverBg: "hover:bg-maroon-50/80"
     }
   ];
 
@@ -118,12 +125,12 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Skills Grid - 2x3 Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+        {/* Skills Grid - Responsive grid ensuring consistent card heights */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {skillCategories.map((skillGroup, index) => (
             <div 
               key={skillGroup.category}
-              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden flex flex-col min-h-[400px]"
+              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden flex flex-col min-h-[320px]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background gradients */}
@@ -157,7 +164,7 @@ const Skills = () => {
                     return (
                       <div 
                         key={skillIndex}
-                        className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/30 hover:shadow-md`}
+                        className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/20`}
                       >
                         <div className={`w-6 h-6 rounded flex items-center justify-center flex-shrink-0 ${
                           skillGroup.color === 'maroon' 
