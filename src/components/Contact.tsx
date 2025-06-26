@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, MapPin, Linkedin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -15,27 +15,58 @@ const Contact = () => {
     honeypot: '' // Anti-spam honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Check honeypot field (should be empty)
     if (formData.honeypot) {
+      console.log('Spam detected, rejecting submission');
       return; // Likely spam, silently reject
     }
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!validateForm()) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: "Form Validation Error",
+        description: "Please fix the errors below and try again.",
         variant: "destructive",
       });
       return;
     }
 
     setIsSubmitting(true);
-    console.log('Submitting form to Formspree:', formData);
+    console.log('Submitting form to Formspree:', {
+      name: formData.name,
+      email: formData.email,
+      messageLength: formData.message.length
+    });
 
     try {
       const response = await fetch('https://formspree.io/f/xkgwkqnq', {
@@ -45,16 +76,23 @@ const Contact = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          _subject: `New contact form submission from ${formData.name}`,
+          _replyto: formData.email
         }),
       });
 
+      console.log('Formspree response:', response.status, response.statusText);
+
       if (response.ok) {
+        const responseData = await response.json();
+        console.log('Formspree success:', responseData);
+        
         toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for your message. I'll be in touch soon!",
+          title: "Message Sent Successfully! ✨",
+          description: "Thank you for reaching out! I'll get back to you within 24 hours.",
         });
         
         // Reset form
@@ -64,14 +102,17 @@ const Contact = () => {
           message: '',
           honeypot: ''
         });
+        setErrors({});
       } else {
-        throw new Error('Failed to send message');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Formspree error:', response.status, errorData);
+        throw new Error(`Server responded with ${response.status}`);
       }
     } catch (error) {
       console.error('Error sending message:', error);
       toast({
         title: "Message Failed to Send",
-        description: "Sorry, something went wrong. Please try again or email me directly at ajuhi31@gmail.com.",
+        description: "There was a problem sending your message. Please try again or email me directly.",
         variant: "destructive",
       });
     } finally {
@@ -80,10 +121,13 @@ const Contact = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
 
   return (
@@ -170,7 +214,7 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="relative z-10">
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   {/* Honeypot field for spam protection - hidden from users */}
                   <input
                     type="text"
@@ -191,10 +235,18 @@ const Contact = () => {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
+                        className={`border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl ${
+                          errors.name ? 'border-red-300 focus:border-red-500' : ''
+                        }`}
                         required
                         disabled={isSubmitting}
                       />
+                      {errors.name && (
+                        <p className="mt-1 text-sm text-red-600 flex items-center">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {errors.name}
+                        </p>
+                      )}
                     </div>
                     
                     <div>
@@ -205,10 +257,18 @@ const Contact = () => {
                         placeholder="your.email@example.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl"
+                        className={`border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl ${
+                          errors.email ? 'border-red-300 focus:border-red-500' : ''
+                        }`}
                         required
                         disabled={isSubmitting}
                       />
+                      {errors.email && (
+                        <p className="mt-1 text-sm text-red-600 flex items-center">
+                          <AlertCircle className="w-4 h-4 mr-1" />
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
                   </div>
                   
@@ -220,10 +280,21 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl resize-none"
+                      className={`border-slate-300 focus:border-maroon-700 focus:ring-maroon-200 bg-white/70 backdrop-blur-sm rounded-xl resize-none ${
+                        errors.message ? 'border-red-300 focus:border-red-500' : ''
+                      }`}
                       required
                       disabled={isSubmitting}
                     />
+                    {errors.message && (
+                      <p className="mt-1 text-sm text-red-600 flex items-center">
+                        <AlertCircle className="w-4 h-4 mr-1" />
+                        {errors.message}
+                      </p>
+                    )}
+                    <p className="mt-1 text-sm text-slate-500">
+                      {formData.message.length}/500 characters
+                    </p>
                   </div>
                   
                   <Button 
@@ -233,8 +304,8 @@ const Contact = () => {
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                        Sending...
+                        <Loader2 className="animate-spin h-5 w-5 mr-3" />
+                        Sending Message...
                       </>
                     ) : (
                       <>
