@@ -20,12 +20,16 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log('Form submission started');
+    
     // Check honeypot field (should be empty)
     if (formData.honeypot) {
+      console.log('Spam detected via honeypot field');
       return; // Likely spam, silently reject
     }
 
     if (!formData.name || !formData.email || !formData.message) {
+      console.log('Form validation failed - missing required fields');
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
@@ -35,10 +39,17 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    console.log('Submitting form to Formspree:', formData);
+    console.log('Submitting form to Formspree with new endpoint:', {
+      endpoint: 'https://formspree.io/f/mldnoqgy',
+      formData: {
+        name: formData.name,
+        email: formData.email,
+        messageLength: formData.message.length
+      }
+    });
 
     try {
-      const response = await fetch('https://formspree.io/f/xkgwkqnq', {
+      const response = await fetch('https://formspree.io/f/mldnoqgy', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -51,7 +62,13 @@ const Contact = () => {
         }),
       });
 
+      console.log('Formspree response status:', response.status);
+      console.log('Formspree response ok:', response.ok);
+
       if (response.ok) {
+        const responseData = await response.json();
+        console.log('Form submitted successfully:', responseData);
+        
         toast({
           title: "Message Sent Successfully!",
           description: "Thank you for your message. I'll be in touch soon!",
@@ -65,7 +82,13 @@ const Contact = () => {
           honeypot: ''
         });
       } else {
-        throw new Error('Failed to send message');
+        const errorData = await response.json().catch(() => null);
+        console.error('Formspree error response:', {
+          status: response.status,
+          statusText: response.statusText,
+          errorData
+        });
+        throw new Error(`Failed to send message: ${response.status} ${response.statusText}`);
       }
     } catch (error) {
       console.error('Error sending message:', error);
@@ -76,6 +99,7 @@ const Contact = () => {
       });
     } finally {
       setIsSubmitting(false);
+      console.log('Form submission completed');
     }
   };
 
