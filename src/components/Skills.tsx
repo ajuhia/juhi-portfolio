@@ -125,12 +125,12 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Skills Grid - 4 columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+        {/* Skills Grid - Masonry layout with 4 columns */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 sm:gap-8">
           {skillCategories.map((skillGroup, index) => (
             <div 
               key={skillGroup.category}
-              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden"
+              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden break-inside-avoid mb-6 sm:mb-8"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background gradients */}
