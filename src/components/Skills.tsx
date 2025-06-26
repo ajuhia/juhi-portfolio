@@ -125,12 +125,12 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Skills Grid - CSS Grid layout for consistent alignment */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-min">
+        {/* Skills Grid - Dynamic masonry-like layout */}
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 sm:gap-8 space-y-6 sm:space-y-8">
           {skillCategories.map((skillGroup, index) => (
             <div 
               key={skillGroup.category}
-              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden"
+              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden break-inside-avoid inline-block w-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background gradients */}
@@ -143,7 +143,7 @@ const Skills = () => {
               </div>
 
               {/* Category Header */}
-              <div className="text-center mb-5 relative z-10">
+              <div className="text-center mb-4 relative z-10">
                 <h3 className={`text-lg font-bold font-poppins mb-3 ${
                   skillGroup.color === 'maroon' ? 'text-maroon-700' : 'text-steel-blue-600'
                 } group-hover:text-opacity-90 transition-colors duration-300`}>
@@ -156,15 +156,15 @@ const Skills = () => {
                 }`}></div>
               </div>
               
-              {/* Skills - Optimized vertical layout */}
+              {/* Skills - Compact vertical layout */}
               <div className="relative z-10">
-                <div className="space-y-2.5">
+                <div className="space-y-2">
                   {skillGroup.items.map((skill, skillIndex) => {
                     const IconComponent = skill.icon;
                     return (
                       <div 
                         key={skillIndex}
-                        className={`flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/20`}
+                        className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/20`}
                       >
                         <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
                           skillGroup.color === 'maroon' 
@@ -173,7 +173,7 @@ const Skills = () => {
                         } transition-colors duration-300`}>
                           <IconComponent className="w-3 h-3" />
                         </div>
-                        <span className="text-slate-700 font-medium text-sm leading-5 group-hover/item:text-slate-900 transition-colors duration-300 font-poppins">
+                        <span className="text-slate-700 font-medium text-sm group-hover/item:text-slate-900 transition-colors duration-300 font-poppins">
                           {skill.name}
                         </span>
                       </div>
