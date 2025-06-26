@@ -3,7 +3,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Skills from '@/components/Skills';
+import SkillsGrid from '@/components/SkillsGrid';
 import Projects from '@/components/Projects';
 import Education from '@/components/Education';
 import Experience from '@/components/Experience';
@@ -16,7 +16,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <About />
-      <Skills />
+      <SkillsGrid />
       <Projects />
       <Education />
       <Experience />
