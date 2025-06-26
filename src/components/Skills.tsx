@@ -125,12 +125,12 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Skills Grid - Responsive grid ensuring consistent card heights */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Skills Grid - Dynamic masonry-like layout */}
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 sm:gap-8 space-y-6 sm:space-y-8">
           {skillCategories.map((skillGroup, index) => (
             <div 
               key={skillGroup.category}
-              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden flex flex-col min-h-[320px]"
+              className="animate-fade-in bg-gradient-to-br from-white/60 via-white/80 to-white/60 backdrop-blur-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 p-6 border border-white/30 group relative overflow-hidden break-inside-avoid inline-block w-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background gradients */}
@@ -143,8 +143,8 @@ const Skills = () => {
               </div>
 
               {/* Category Header */}
-              <div className="text-center mb-6 relative z-10">
-                <h3 className={`text-xl font-bold font-poppins mb-4 ${
+              <div className="text-center mb-4 relative z-10">
+                <h3 className={`text-lg font-bold font-poppins mb-3 ${
                   skillGroup.color === 'maroon' ? 'text-maroon-700' : 'text-steel-blue-600'
                 } group-hover:text-opacity-90 transition-colors duration-300`}>
                   {skillGroup.category}
@@ -156,24 +156,24 @@ const Skills = () => {
                 }`}></div>
               </div>
               
-              {/* Skills - Horizontal Layout with Flex Wrap */}
-              <div className="flex-grow relative z-10">
-                <div className="flex flex-wrap gap-3 justify-center text-justify">
+              {/* Skills - Compact vertical layout */}
+              <div className="relative z-10">
+                <div className="space-y-2">
                   {skillGroup.items.map((skill, skillIndex) => {
                     const IconComponent = skill.icon;
                     return (
                       <div 
                         key={skillIndex}
-                        className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/20`}
+                        className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-all duration-300 cursor-pointer ${skillGroup.hoverBg} group/item border border-transparent hover:border-white/20`}
                       >
-                        <div className={`w-6 h-6 rounded flex items-center justify-center flex-shrink-0 ${
+                        <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
                           skillGroup.color === 'maroon' 
                             ? 'bg-maroon-100 text-maroon-700 group-hover/item:bg-maroon-200' 
                             : 'bg-steel-blue-100 text-steel-blue-600 group-hover/item:bg-steel-blue-200'
                         } transition-colors duration-300`}>
-                          <IconComponent className="w-4 h-4" />
+                          <IconComponent className="w-3 h-3" />
                         </div>
-                        <span className="text-slate-700 font-medium text-lg group-hover/item:text-slate-900 transition-colors duration-300 whitespace-nowrap font-poppins">
+                        <span className="text-slate-700 font-medium text-sm group-hover/item:text-slate-900 transition-colors duration-300 font-poppins">
                           {skill.name}
                         </span>
                       </div>
