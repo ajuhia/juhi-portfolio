@@ -48,7 +48,6 @@ const Skills = () => {
     {
       category: "Data Science Tools",
       items: [
-        { name: "ETL Scripting", icon: BarChart3 },
         { name: "NumPy", icon: BarChart3 },
         { name: "Pandas", icon: BarChart3 },
         { name: "Scikit-learn", icon: BarChart3 },
@@ -68,6 +67,7 @@ const Skills = () => {
       category: "Data Engineering Tools",
       items: [
         { name: "Apache Airflow", icon: Settings },
+        { name: "ETL Scripting", icon: Code },
         { name: "Hive", icon: Database },
         { name: "HBase", icon: Database },
         { name: "Zookeeper", icon: Settings },
