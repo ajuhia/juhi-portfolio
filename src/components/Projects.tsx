@@ -77,7 +77,7 @@ const Projects = () => {
               <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 mx-auto rounded-full"></div>
             </div>
             <p className="text-xl text-slate-600 mt-6 max-w-3xl mx-auto">
-              Innovative solutions at the intersection of data science, AI, and real-world impact
+              A few projects I’ve built and brought to life with data and code.
             </p>
           </div>
 
