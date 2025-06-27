@@ -29,7 +29,7 @@ const About = () => {
                 <br /><br />
                 Outside of academics and work, I'm passionate about mentoring and community engagement. I've supported student growth through Mentor-Together and contributed to Corporate Social Responsibility programs, because I believe meaningful innovation starts with empathy and inclusion.
                 <br /><br />
-                Right now, I'm diving deeper into the world of AI—curious, excited, and always learning. If you're passionate about <span className="font-semibold text-maroon-700">analytics, responsible tech, or building tools that make a difference</span>, let's connect!
+                Right now, I'm diving deeper into the world of AI: curious, excited, and always learning. If you're passionate about <span className="font-semibold text-maroon-700">analytics, responsible tech, or building tools that make a difference</span>, let's connect!
               </p>
             </div>
           </div>
