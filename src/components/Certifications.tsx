@@ -1,8 +1,13 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Certifications = () => {
+  useEffect(() => {
+  // Debug: Log project image paths
+  console.log('Certifications component - Base URL:', import.meta.env.BASE_URL);
+  console.log('Udacity Logo image path:', `${import.meta.env.BASE_URL}lovable-uploads/846e3336-656b-4181-8a16-f5500d905110.png`);
+  }, []);
+  
   const certifications = [
     {
       title: "AWS Cloud Practitioner",
@@ -14,7 +19,7 @@ const Certifications = () => {
       title: "Data Engineering Nanodegree",
       issuer: "Udacity",
       date: "2023",
-      icon: "/lovable-uploads/846e3336-656b-4181-8a16-f5500d905110.png"
+      icon: `${import.meta.env.BASE_URL}lovable-uploads/846e3336-656b-4181-8a16-f5500d905110.png`
     },
     {
       title: "Productivity Challenge Award",
@@ -22,6 +27,7 @@ const Certifications = () => {
       date: "2017",
       icon: "🏆"
     }
+    
   ];
 
   return (
