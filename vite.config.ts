@@ -22,7 +22,7 @@ import { componentTagger } from "lovable-tagger";
 // }));
 export default defineConfig ({
   plugins: [react()],
-    base: '/juhi-portfolio/',
+    base: '/juhi-portfolio',
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
