@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Certifications = () => {
@@ -8,6 +7,7 @@ const Certifications = () => {
   console.log('Certifications component - Base URL:', import.meta.env.BASE_URL);
   console.log('Udacity Logo image path:', `${import.meta.env.BASE_URL}lovable-uploads/846e3336-656b-4181-8a16-f5500d905110.png`);
   }, []);
+  
   const certifications = [
     {
       title: "AWS Cloud Practitioner",
