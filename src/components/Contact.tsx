@@ -133,7 +133,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-slate-900 mb-6 font-poppins">Get in Touch</h3>
               <p className="text-slate-700 leading-relaxed mb-8">
                 I'm always excited to discuss new opportunities, collaborations, and interesting projects. 
-                Whether you have a crazy data challenge or just want to chat about the latest in AI, I'd love to connect!
+                Whether you have a crazy data challenge or just want to chat about the latest in Tech, I'd love to connect!
               </p>
 
               <div className="space-y-6">

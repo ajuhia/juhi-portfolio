@@ -23,13 +23,13 @@ const About = () => {
               <p className="text-lg text-slate-700 leading-relaxed font-poppins text-justify">
                 Hi! I'm a tech enthusiast who believes in the power of technology to drive meaningful change and solve real-world problems.
                 <br /><br />
-                My journey into tech has always been guided by curiosity—curiosity about how systems interact, how data can inform better decisions, and how thoughtful design can transform technical solutions into meaningful impact. Whether it's building scalable infrastructure, uncovering insights from complex data, or applying technology to everyday challenges, I find purpose in creating systems that are both intelligent and human-centered.
+                My journey into tech has always been guided by curiosity about how systems interact, how data can inform better decisions, and how thoughtful design can transform technical solutions into meaningful impact. Whether it's building scalable infrastructure, uncovering insights from complex data, or applying technology to everyday challenges, I find purpose in creating systems that are both intelligent and human-centered.
                 <br /><br />
                 Currently, I'm pursuing my <span className="font-semibold text-steel-blue-600">Master's in Business Analytics at the University of Illinois Chicago</span>, where I'm exploring everything from data science and machine learning to cloud technologies and artificial intelligence. Every project I take on is a chance to learn, collaborate, and build something useful.
                 <br /><br />
-                Outside of academics and work, I'm passionate about mentoring and community engagement. I've supported student growth through Mentor-Together and contributed to Corporate Social Responsibility programs—because I believe meaningful innovation starts with empathy and inclusion.
+                Outside of academics and work, I'm passionate about mentoring and community engagement. I've supported student growth through Mentor-Together and contributed to Corporate Social Responsibility programs, because I believe meaningful innovation starts with empathy and inclusion.
                 <br /><br />
-                Right now, I'm diving deeper into the world of AI—curious, excited, and always learning. If you're passionate about <span className="font-semibold text-maroon-700">analytics, responsible tech, or building tools that make a difference</span>, let's connect. 🚀
+                Right now, I'm diving deeper into the world of AI—curious, excited, and always learning. If you're passionate about <span className="font-semibold text-maroon-700">analytics, responsible tech, or building tools that make a difference</span>, let's connect!
               </p>
             </div>
           </div>
