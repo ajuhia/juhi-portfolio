@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
@@ -8,6 +8,12 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    // Debug: Log project image paths
+    console.log('Projects component - Base URL:', import.meta.env.BASE_URL);
+    console.log('Sample project image path:', `${import.meta.env.BASE_URL}lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png`);
+  }, []);
+
   const projects = [
     {
       title: "TikTok Mental Health Analysis",
@@ -15,7 +21,7 @@ const Projects = () => {
       tools: ["Gemini", "Python"],
       slug: "tiktok-mental-health-analysis",
       featured: true,
-      image: "/juhi-portfolio/lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png`
     },
     {
       title: "Empathia – AI-Powered Job Application Assistant",
@@ -23,7 +29,7 @@ const Projects = () => {
       tools: ["n8n", "ElevenLabs", "GPT-4.0 API"],
       slug: "empathia-voice-resume-builder",
       featured: true,
-      image: "/juhi-portfolio/lovable-uploads/17e6d107-cee5-4dc9-be1c-62265da9372f.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/17e6d107-cee5-4dc9-be1c-62265da9372f.png`
     },
     {
       title: "Airline Performance Analysis",
@@ -31,7 +37,7 @@ const Projects = () => {
       tools: ["Python", "Tableau"],
       slug: "airline-performance-analysis",
       featured: false,
-      image: "/juhi-portfolio/lovable-uploads/e132e6dc-7610-4d84-a49f-36fa35ca6a9c.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/e132e6dc-7610-4d84-a49f-36fa35ca6a9c.png`
     },
     {
       title: "Prostate Cancer Survival Prediction",
@@ -39,7 +45,7 @@ const Projects = () => {
       tools: ["Python", "Health Analytics", "Survival Analysis"],
       slug: "prostate-cancer-survival-prediction",
       featured: false,
-      image: "/juhi-portfolio/lovable-uploads/3ff828c3-77d7-4f99-98c6-039d611807e8.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/3ff828c3-77d7-4f99-98c6-039d611807e8.png`
     }
   ];
 
@@ -90,6 +96,17 @@ const Projects = () => {
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      console.error('Project image failed to load:', e.currentTarget.src);
+                      e.currentTarget.style.backgroundColor = '#f3f4f6';
+                      e.currentTarget.style.display = 'flex';
+                      e.currentTarget.style.alignItems = 'center';
+                      e.currentTarget.style.justifyContent = 'center';
+                      e.currentTarget.innerHTML = '<div style="color: #6b7280; font-size: 14px;">Image not available</div>';
+                    }}
+                    onLoad={() => {
+                      console.log('Project image loaded successfully:', project.image);
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -151,6 +168,17 @@ const Projects = () => {
                       src={project.image} 
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        console.error('Project image failed to load:', e.currentTarget.src);
+                        e.currentTarget.style.backgroundColor = '#f3f4f6';
+                        e.currentTarget.style.display = 'flex';
+                        e.currentTarget.style.alignItems = 'center';
+                        e.currentTarget.style.justifyContent = 'center';
+                        e.currentTarget.innerHTML = '<div style="color: #6b7280; font-size: 12px;">Image not available</div>';
+                      }}
+                      onLoad={() => {
+                        console.log('Project image loaded successfully:', project.image);
+                      }}
                     />
                   </div>
                   
