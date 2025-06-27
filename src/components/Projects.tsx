@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -16,7 +15,7 @@ const Projects = () => {
       tools: ["Gemini", "Python"],
       slug: "tiktok-mental-health-analysis",
       featured: true,
-      image: "/lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png"
+      image: "/juhi-portfolio/lovable-uploads/a7d0a835-7259-40e1-b7b1-67ef17ad79a3.png"
     },
     {
       title: "Empathia – AI-Powered Job Application Assistant",
@@ -24,7 +23,7 @@ const Projects = () => {
       tools: ["n8n", "ElevenLabs", "GPT-4.0 API"],
       slug: "empathia-voice-resume-builder",
       featured: true,
-      image: "/lovable-uploads/17e6d107-cee5-4dc9-be1c-62265da9372f.png"
+      image: "/juhi-portfolio/lovable-uploads/17e6d107-cee5-4dc9-be1c-62265da9372f.png"
     },
     {
       title: "Airline Performance Analysis",
@@ -32,7 +31,7 @@ const Projects = () => {
       tools: ["Python", "Tableau"],
       slug: "airline-performance-analysis",
       featured: false,
-      image: "/lovable-uploads/e132e6dc-7610-4d84-a49f-36fa35ca6a9c.png"
+      image: "/juhi-portfolio/lovable-uploads/e132e6dc-7610-4d84-a49f-36fa35ca6a9c.png"
     },
     {
       title: "Prostate Cancer Survival Prediction",
@@ -40,7 +39,7 @@ const Projects = () => {
       tools: ["Python", "Health Analytics", "Survival Analysis"],
       slug: "prostate-cancer-survival-prediction",
       featured: false,
-      image: "/lovable-uploads/3ff828c3-77d7-4f99-98c6-039d611807e8.png"
+      image: "/juhi-portfolio/lovable-uploads/3ff828c3-77d7-4f99-98c6-039d611807e8.png"
     }
   ];
 
