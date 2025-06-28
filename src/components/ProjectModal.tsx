@@ -119,6 +119,22 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       challenges: [],
       results: [],
       techStack: ["Python (pandas, seaborn, scikit-learn, lifelines)", "Health Data Analytics", "Survival Analysis", "Statistical Modeling"]
+    },
+    "us-immigration-data-pipeline": {
+      fullDescription: "This project focuses on building an end-to-end data pipeline to transform and analyze U.S. immigration data. Using Apache Spark and AWS cloud infrastructure, the goal was to automate the ingestion, transformation, and modeling of large-scale I94 datasets.",
+      subtitle: "Built a scalable pipeline to process U.S. immigration data using Spark and AWS",
+      overview: "This project focuses on building an end-to-end data pipeline to transform and analyze U.S. immigration data. Using Apache Spark and AWS cloud infrastructure, the goal was to automate the ingestion, transformation, and modeling of large-scale I94 datasets.",
+      approach: "Built a modular ETL workflow with Apache Spark for high-performance batch processing. Raw SAS and demographic data were cleaned, joined, and loaded into fact and dimension tables modeled for efficient analytics. Implemented data quality checks and monitored pipeline performance.",
+      keyFeatures: [
+        "Developed scalable ETL using Spark on AWS",
+        "Modeled star schema tables for immigration fact and dimension data",
+        "Integrated U.S. temperature and airport codes for enrichment",
+        "Applied data quality checks and Spark UDFs"
+      ],
+      impactAndUseCase: "Delivered a reusable pipeline that automates large-scale U.S. immigration data processing, enabling downstream analytics for trends, demographic insights, and immigration policy support.",
+      challenges: [],
+      results: [],
+      techStack: ["Python", "Apache Spark", "AWS S3", "AWS EMR", "PostgreSQL"]
     }
   };
 

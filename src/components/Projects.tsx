@@ -46,6 +46,14 @@ const Projects = () => {
       slug: "prostate-cancer-survival-prediction",
       featured: false,
       image: `${import.meta.env.BASE_URL}lovable-uploads/3ff828c3-77d7-4f99-98c6-039d611807e8.png`
+    },
+    {
+      title: "U.S. Immigration Data Pipeline",
+      description: "Built a scalable pipeline to process U.S. immigration data using Spark and AWS; automated ETL and validated data quality.",
+      tools: ["Python", "Apache Spark", "AWS", "Data Engineering"],
+      slug: "us-immigration-data-pipeline",
+      featured: false,
+      image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=800&h=600&fit=crop&crop=center"
     }
   ];
 
