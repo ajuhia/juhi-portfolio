@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -53,7 +54,7 @@ const Projects = () => {
       tools: ["Python", "Apache Spark", "AWS", "Data Engineering"],
       slug: "us-immigration-data-pipeline",
       featured: false,
-      image: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=800&h=600&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1589482337062-bec95de3204e?w=800&h=600&fit=crop&crop=center"
     }
   ];
 
