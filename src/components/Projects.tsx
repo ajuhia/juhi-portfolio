@@ -50,7 +50,7 @@ const Projects = () => {
     {
       title: "U.S. Immigration Data Pipeline",
       description: "Built a scalable pipeline to process U.S. immigration data using Spark and AWS; automated ETL and validated data quality.",
-      tools: ["Python", "Apache Spark", "AWS", "Data Engineering"],
+      tools: ["Python", "Apache Airflow", "PySpark", "AWS", "DAGS", "ETL"],
       slug: "us-immigration-data-pipeline",
       featured: false,
       image: `${import.meta.env.BASE_URL}lovable-uploads/4fa79728-6851-4e8a-acbf-f449c03dbddc.png`

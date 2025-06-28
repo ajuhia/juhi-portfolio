@@ -134,7 +134,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
       impactAndUseCase: "Delivered a reusable pipeline that automates large-scale U.S. immigration data processing, enabling downstream analytics for trends, demographic insights, and immigration policy support.",
       challenges: [],
       results: [],
-      techStack: ["Python", "Apache Spark", "AWS S3", "AWS EMR", "PostgreSQL"]
+      techStack: ["Python", "Apache Airflow", "PySpark" "AWS S3", "AWS EMR", "PostgreSQL"]
     }
   };
 
