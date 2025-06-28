@@ -77,7 +77,7 @@ const Projects = () => {
               <div className="w-32 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 mx-auto rounded-full"></div>
             </div>
             <p className="text-xl text-slate-600 mt-6 max-w-3xl mx-auto">
-              A few projects I’ve built and brought to life with data and code.
+              A few projects I've built and brought to life with data and code.
             </p>
           </div>
 
@@ -112,17 +112,10 @@ const Projects = () => {
                 </div>
                 
                 <CardHeader className="pb-4 relative z-10">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-maroon-700 transition-colors duration-300 font-poppins mb-3">
-                        {project.title}
-                      </CardTitle>
-                      <div className="w-12 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 rounded-full mb-4"></div>
-                    </div>
-                    <div className="bg-maroon-100 p-2 rounded-lg">
-                      <ExternalLink className="h-5 w-5 text-maroon-700" />
-                    </div>
-                  </div>
+                  <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-maroon-700 transition-colors duration-300 font-poppins mb-3">
+                    {project.title}
+                  </CardTitle>
+                  <div className="w-12 h-1 bg-gradient-to-r from-maroon-700 to-steel-blue-500 rounded-full mb-4"></div>
                   <CardDescription className="text-slate-600 leading-relaxed text-base">
                     {project.description}
                   </CardDescription>
