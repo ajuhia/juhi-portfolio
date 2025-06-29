@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -286,33 +285,37 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex gap-4 pt-4 border-t">
+          {/* Action Buttons - Modified to show only View Dashboard for Alaska Airlines */}
+          <div className="pt-4 border-t">
             {project.slug === "airline-performance-analysis" && details.dashboardLink ? (
-              <Button 
-                className="flex-1 bg-maroon-700 hover:bg-maroon-800 text-white"
-                onClick={() => window.open(details.dashboardLink, '_blank')}
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                View Dashboard
-              </Button>
+              <div className="flex justify-center">
+                <Button 
+                  className="bg-maroon-700 hover:bg-maroon-800 text-white px-8 py-3"
+                  onClick={() => window.open(details.dashboardLink, '_blank')}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View Dashboard
+                </Button>
+              </div>
             ) : (
-              <Button 
-                className="flex-1 bg-maroon-700 hover:bg-maroon-800 text-white"
-                onClick={() => console.log(`View live project: ${project.slug}`)}
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                View Live Project
-              </Button>
+              <div className="flex gap-4">
+                <Button 
+                  className="flex-1 bg-maroon-700 hover:bg-maroon-800 text-white"
+                  onClick={() => console.log(`View live project: ${project.slug}`)}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View Live Project
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="border-steel-blue-600 text-steel-blue-600 hover:bg-steel-blue-600 hover:text-white"
+                  onClick={() => console.log(`View source code: ${project.slug}`)}
+                >
+                  <Github className="mr-2 h-4 w-4" />
+                  Source Code
+                </Button>
+              </div>
             )}
-            <Button 
-              variant="outline"
-              className="border-steel-blue-600 text-steel-blue-600 hover:bg-steel-blue-600 hover:text-white"
-              onClick={() => console.log(`View source code: ${project.slug}`)}
-            >
-              <Github className="mr-2 h-4 w-4" />
-              Source Code
-            </Button>
           </div>
         </div>
       </DialogContent>
