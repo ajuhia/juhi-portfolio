@@ -114,11 +114,11 @@ const Hero = () => {
           {/* Mobile and Desktop Layout */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xl:gap-20">
             
-            {/* Image Section - Circular/Oval Profile Avatar */}
+            {/* Image Section - Circular Profile Avatar */}
             <div className="flex-shrink-0 order-1 lg:order-1">
               <div className="relative group">
-                {/* Circular/Oval image container with soft shadow */}
-                <div className="w-64 h-80 sm:w-72 sm:h-90 md:w-80 md:h-96 lg:w-72 lg:h-90 xl:w-80 xl:h-100 relative">
+                {/* Circular image container with soft shadow - made larger */}
+                <div className="w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] lg:w-80 lg:h-80 xl:w-96 xl:h-96 relative">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-steel-blue-100 to-steel-blue-200 shadow-2xl shadow-steel-blue-300/40 overflow-hidden border-4 border-white/80 relative group-hover:shadow-3xl group-hover:shadow-steel-blue-400/50 transition-all duration-500">
                     <img 
                       src={`${import.meta.env.BASE_URL}lovable-uploads/ba038dc4-f455-4256-b475-f0116c619339.png`}
@@ -151,7 +151,7 @@ const Hero = () => {
                 </h1>
               </div>
               
-              <div className="mb-8 lg:mb-12">
+              <div className="mb-6 lg:mb-8">
                 <p className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl text-steel-blue-700 font-medium font-poppins min-h-[80px] sm:min-h-[100px] leading-relaxed">
                   {currentRoleText}
                   <span className="animate-pulse text-maroon-500">|</span>
