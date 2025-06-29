@@ -114,16 +114,16 @@ const Hero = () => {
           {/* Mobile and Desktop Layout */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xl:gap-20">
             
-            {/* Image Section - Circular Profile Avatar */}
+            {/* Image Section - Rectangular Profile Avatar */}
             <div className="flex-shrink-0 order-1 lg:order-1">
               <div className="relative group">
-                {/* Circular image container with soft shadow - made larger */}
-                <div className="w-80 h-80 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] lg:w-80 lg:h-80 xl:w-96 xl:h-96 relative">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-steel-blue-100 to-steel-blue-200 shadow-2xl shadow-steel-blue-300/40 overflow-hidden border-4 border-white/80 relative group-hover:shadow-3xl group-hover:shadow-steel-blue-400/50 transition-all duration-500">
+                {/* Rectangular image container with soft shadow */}
+                <div className="w-80 h-96 sm:w-96 sm:h-[450px] md:w-[420px] md:h-[500px] lg:w-80 lg:h-96 xl:w-96 xl:h-[450px] relative">
+                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-steel-blue-100 to-steel-blue-200 shadow-2xl shadow-steel-blue-300/40 overflow-hidden border-4 border-white/80 relative group-hover:shadow-3xl group-hover:shadow-steel-blue-400/50 transition-all duration-500">
                     <img 
                       src={`${import.meta.env.BASE_URL}lovable-uploads/ba038dc4-f455-4256-b475-f0116c619339.png`}
                       alt="Juhi Anand"
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-top"
                       onError={(e) => {
                         console.error('Image failed to load:', e.currentTarget.src);
                         e.currentTarget.style.display = 'none';
@@ -133,11 +133,11 @@ const Hero = () => {
                       }}
                     />
                     {/* Enhanced hover effect with steel blue */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-steel-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-steel-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                   </div>
                   
                   {/* Additional soft glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-steel-blue-200/30 via-maroon-200/20 to-steel-blue-200/30 blur-xl -z-10 opacity-60"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-steel-blue-200/30 via-maroon-200/20 to-steel-blue-200/30 blur-xl -z-10 opacity-60"></div>
                 </div>
               </div>
             </div>
