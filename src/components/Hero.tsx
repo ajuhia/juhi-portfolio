@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Download, ChevronDown } from 'lucide-react';
+import { ChevronDown, Linkedin, Github } from 'lucide-react';
 import ParticleSystem from './ParticleSystem';
 import DynamicGradients from './DynamicGradients';
 import TextureOverlay from './TextureOverlay';
@@ -73,32 +73,12 @@ const Hero = () => {
     }
   };
 
-  const handleResumeClick = () => {
-    const resumePath = `${import.meta.env.BASE_URL}lovable-uploads/JuhiAnand.pdf`;
-    console.log('Attempting to open resume at:', resumePath);
-    
-    // Try to open the resume
-    const link = document.createElement('a');
-    link.href = resumePath;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    
-    // Check if the file exists before opening
-    fetch(resumePath, { method: 'HEAD' })
-      .then(response => {
-        console.log('Resume file check:', response.status, response.statusText);
-        if (response.ok) {
-          link.click();
-        } else {
-          console.error('Resume file not found at:', resumePath);
-          alert('Resume file is currently unavailable. Please try again later.');
-        }
-      })
-      .catch(error => {
-        console.error('Error checking resume file:', error);
-        // Try to open anyway in case it's a CORS issue
-        link.click();
-      });
+  const handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/juhianand/', '_blank', 'noopener,noreferrer');
+  };
+
+  const handleGitHubClick = () => {
+    window.open('https://github.com/ajuhia', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -158,15 +138,25 @@ const Hero = () => {
                 </p>
               </div>
               
-              <div className="flex justify-center lg:justify-start items-center">
+              <div className="flex justify-center lg:justify-start items-center gap-4">
                 <Button 
                   size="lg" 
-                  onClick={handleResumeClick}
-                  className="bg-gradient-to-r from-steel-blue-700 via-steel-blue-600 to-steel-blue-500 hover:from-steel-blue-800 hover:via-steel-blue-700 hover:to-steel-blue-600 text-white px-8 sm:px-12 py-4 sm:py-5 text-base sm:text-lg font-medium font-poppins transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl shadow-steel-blue-300/30 hover:shadow-steel-blue-400/40 rounded-full border-0 relative overflow-hidden group"
+                  onClick={handleLinkedInClick}
+                  className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 hover:from-blue-700 hover:via-blue-600 hover:to-blue-500 text-white px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-medium font-poppins transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl shadow-blue-300/30 hover:shadow-blue-400/40 rounded-full border-0 relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
-                  <span className="relative z-10">Check Resume</span>
+                  <Linkedin className="mr-2 h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
+                  <span className="relative z-10">LinkedIn</span>
+                </Button>
+                
+                <Button 
+                  size="lg" 
+                  onClick={handleGitHubClick}
+                  className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 hover:from-gray-900 hover:via-gray-800 hover:to-gray-700 text-white px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-medium font-poppins transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl shadow-gray-300/30 hover:shadow-gray-400/40 rounded-full border-0 relative overflow-hidden group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                  <Github className="mr-2 h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
+                  <span className="relative z-10">GitHub</span>
                 </Button>
               </div>
             </div>
