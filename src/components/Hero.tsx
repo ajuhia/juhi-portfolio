@@ -140,23 +140,21 @@ const Hero = () => {
               
               <div className="flex justify-center lg:justify-start items-center gap-4">
                 <Button 
-                  size="lg" 
+                  size="icon"
                   onClick={handleLinkedInClick}
-                  className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 hover:from-blue-700 hover:via-blue-600 hover:to-blue-500 text-white px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-medium font-poppins transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl shadow-blue-300/30 hover:shadow-blue-400/40 rounded-full border-0 relative overflow-hidden group"
+                  className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 hover:from-blue-700 hover:via-blue-600 hover:to-blue-500 text-white transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl shadow-blue-300/30 hover:shadow-blue-400/40 rounded-full border-0 relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <Linkedin className="mr-2 h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
-                  <span className="relative z-10">LinkedIn</span>
+                  <Linkedin className="h-6 w-6 sm:h-7 sm:w-7 relative z-10" />
                 </Button>
                 
                 <Button 
-                  size="lg" 
+                  size="icon"
                   onClick={handleGitHubClick}
-                  className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 hover:from-gray-900 hover:via-gray-800 hover:to-gray-700 text-white px-6 sm:px-8 py-4 sm:py-5 text-base sm:text-lg font-medium font-poppins transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl shadow-gray-300/30 hover:shadow-gray-400/40 rounded-full border-0 relative overflow-hidden group"
+                  className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 hover:from-gray-900 hover:via-gray-800 hover:to-gray-700 text-white transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl shadow-gray-300/30 hover:shadow-gray-400/40 rounded-full border-0 relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <Github className="mr-2 h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
-                  <span className="relative z-10">GitHub</span>
+                  <Github className="h-6 w-6 sm:h-7 sm:w-7 relative z-10" />
                 </Button>
               </div>
             </div>
